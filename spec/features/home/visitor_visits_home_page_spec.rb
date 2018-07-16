@@ -10,7 +10,6 @@ RSpec.describe 'Visitor visits home#index' do
 
     expect(page).to have_content(wc)
     expect(page).to have_content(tagline)
-    expect(page).to have_content(messgage)
     expect(page).to have_content(info1)
     expect(page).to have_content(info2)
   end
