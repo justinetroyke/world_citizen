@@ -4,8 +4,8 @@ RSpec.describe 'Visitor visits home#index' do
   it 'they should see app name, description and info sections' do
     wc = "World Citizen"
     tagline = "A way to give back to the world through the purchases you already make"
-    info1 = "How you're helping:"
-    info2 = "How to play:"
+    info1 = "How you're helping"
+    info2 = "How to play"
     visit '/'
 
     expect(page).to have_content(wc)
