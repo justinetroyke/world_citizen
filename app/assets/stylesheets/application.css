@@ -1460,7 +1460,7 @@
  button.btn-success {
    border-color: #d2d5da;
    background-color: #242c75;
-   color: #000000
+   color: #d2d5da
  }
  .paper-btn.btn-success:hover:active,
  [type=button].btn-success:hover:active,
@@ -1477,7 +1477,7 @@
  button.btn-warning {
    border-color: #17230a;
    background-color: #3A581B;
-   color: #000000
+   color: #d2d5da
  }
  .paper-btn.btn-warning:hover:active,
  [type=button].btn-warning:hover:active,

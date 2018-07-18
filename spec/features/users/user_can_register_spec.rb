@@ -28,6 +28,10 @@ RSpec.feature "New account", type: :feature do
         click_on 'Create Account'
 
         expect(current_path).to eq(user_path(User.last.id))
+        expect(page).to have_content(name)
+        expect(page).to have_content(email)
+        expect(page).to have_button('Edit')
+        expect(page).to have_link('My Passport')
       end
     end
   end
