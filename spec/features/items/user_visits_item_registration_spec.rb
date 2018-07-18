@@ -23,12 +23,13 @@ RSpec.describe 'User visits item#new' do
       click_on 'Submit'
 
       expect(current_path).to eq(item_path(Item.last.id))
-      expect(current_page).to have_content(biz)
-      expect(current_page).to have_content(name)
-      expect(current_page).to have_content(amt)
-      expect(current_page).to have_content(org)
-      expect(current_page).to have_content(org_address)
-      expect(current_page).to have_content(category)
+      save_and_open_page
+      expect(page).to have_content(biz)
+      expect(page).to have_content(name)
+      expect(page).to have_content(amt)
+      expect(page).to have_content(org)
+      expect(page).to have_content(org_address)
+      expect(page).to have_content(category)
     end
   end
 end
