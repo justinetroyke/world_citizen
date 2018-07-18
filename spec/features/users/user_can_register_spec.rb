@@ -13,38 +13,21 @@ RSpec.feature "New account", type: :feature do
       end
     end
 
-    context 'and entering in the neccesary credentials' do
-      it 'should redirect to the dashboard and show the profile info' do
-
-        username = 'JimBUser'
-        password = 'password'
-        first_name = 'Jim'
-        last_name = 'User'
-        address = '1234 something street'
+    context 'create account' do
+      it 'should redirect to the user profile and show info' do
+        name = 'Karen Kilgariff'
+        email = 'killgariff@mfm.com'
+        password = 'ssdgm'
 
         visit new_user_path
 
-        fill_in 'user[username]', with: username
-        fill_in 'user[first_name]', with: first_name
-        fill_in 'user[last_name]', with: last_name
-        fill_in 'user[address]', with: address
+        fill_in 'user[name]', with: name
+        fill_in 'user[email]', with: email
         fill_in 'user[password]', with: password
         fill_in 'user[password_confirmation]', with: password
-        within('form') do
-          click_on 'Create Account'
-        end
+        click_on 'Create Account'
 
-        expect(current_path).to eq(dashboard_path)
-
-        within('.flash') do
-          expect(page).to have_content("Logged in as #{username}")
-        end
-        expect(page).to have_content(username)
-        expect(page).to have_content(first_name)
-        expect(page).to have_content(last_name)
-        expect(page).to have_content(address)
-        expect(page).to_not have_link('Log In')
-        expect(page).to have_link('Log Out')
+        expect(current_path).to eq(user_path(User.last.id))
       end
     end
   end
