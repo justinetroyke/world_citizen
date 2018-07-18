@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_18_225437) do
+ActiveRecord::Schema.define(version: 2018_07_18_230316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 2018_07_18_225437) do
     t.string "category"
     t.integer "stamp"
     t.string "organization_location"
+  end
+
+  create_table "passport_stamps", force: :cascade do |t|
+    t.bigint "passport_id"
+    t.bigint "stamp_id"
+    t.index ["passport_id"], name: "index_passport_stamps_on_passport_id"
+    t.index ["stamp_id"], name: "index_passport_stamps_on_stamp_id"
   end
 
   create_table "passports", force: :cascade do |t|
@@ -46,5 +53,7 @@ ActiveRecord::Schema.define(version: 2018_07_18_225437) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "passport_stamps", "passports"
+  add_foreign_key "passport_stamps", "stamps"
   add_foreign_key "passports", "users"
 end
