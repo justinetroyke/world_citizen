@@ -4,6 +4,7 @@ RSpec.feature "New account", type: :feature do
   describe 'A visitor' do
     context 'visiting the new account path' do
       it 'should have fields to enter credentials' do
+
         visit new_user_path
 
         expect(page).to have_field('user[name]')
