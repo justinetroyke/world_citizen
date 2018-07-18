@@ -30,17 +30,31 @@ RSpec.describe 'Visitor visits home#index' do
   end
 
   it 'should show item attributes as headers below the fold' do
-    create_list(:item, 3)
+
+    items = create_list(:item, 11)
 
     visit root_path
 
-    expect(page).to have_content(item.name)
+    expect(page).to have_content('Business Name')
+    expect(page).to have_content('Category')
+    expect(page).to have_content('Stamp')
+    expect(page).to have_content('Item')
+    expect(page).to have_content("Who You're Helping")
+    expect(page).to have_content('Distance')
+  end
+
+  it 'should show 10 items listed below the fold' do
+    items = create_list(:item, 11)
+
+    visit root_path
+
+    items.each do |item|
+      expect(page).to have_content(item.business_name)
+      expect(page).to have_content(item.category)
+      expect(page).to have_content(item.name)
+      expect(page).to have_content(item.stamp)
+      expect(page).to have_content(item.organization)
+      # expect(page).to have_content("distance")
+    end
   end
 end
-
-# Business name:
-# Type:(with drop down sort by Food/Beverage, Product, Fundraiser)
-# Item:
-# Who you're helping:
-# Stamp(sort by stamp):
-# Distance:

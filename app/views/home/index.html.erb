@@ -23,3 +23,37 @@
     </div>
   </div>
 </center>
+
+<div class="row flex-center child-borders">
+  <div class="sm-2 col">Business Name</div>
+  <div class="sm-2 col">Type</div>
+  <div class="sm-2 col">Stamp</div>
+  <div class="sm-2 col">Item</div>
+  <div class="sm-2 col">Who You're Helping</div>
+  <div class="sm-2 col">Distance</div>
+</div>
+
+<table class="table-alternating">
+  <thead>
+    <tr>
+      <th>Business Name</th>
+      <th>Category</th>
+      <th>Stamp</th>
+      <th>Item</th>
+      <th>Who You're Helping</th>
+      <th>Distance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @items.each do |item| %>
+        <td><%= item.business_name %></td>
+        <td><%= item.category %></td>
+        <td><%= item.stamp %></td>
+        <td><%= item.name %></td>
+        <td><%= item.organization %></td>
+        <td>1 mi</td>
+        <% end %>
+    </tr>
+  </tbody>
+</table>

@@ -3,5 +3,15 @@ class Item < ApplicationRecord
                         :name,
                         :donation_amount,
                         :organization,
-                        :category
+                        :category,
+                        :stamp
+
+  enum role: {
+    local: 0,
+    district: 1,
+    regional: 2,
+    national: 3,
+    international: 4,
+    world: 5
+  }
 end

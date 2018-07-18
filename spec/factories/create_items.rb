@@ -5,5 +5,6 @@ FactoryBot.define do
     donation_amount '10%'
     organization "Scott's Tots"
     category 'Product'
+    stamp 0
   end
 end
