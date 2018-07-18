@@ -6,8 +6,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :donation_amount
       t.string :organization
       t.string :category
-
-      t.timestamps null: false
     end
   end
 end

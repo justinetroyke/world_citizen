@@ -29,14 +29,13 @@ RSpec.describe 'Visitor visits home#index' do
     expect(page).to have_content(info2)
   end
 
-  # it 'should show item attributes as headers below the fold' do
-  #   item = Item.create
-  #   visit '/'
-  # expect(page).to have_content(wc)
-  # expect(page).to have_content(tagline)
-  # expect(page).to have_content(info1)
-  # expect(page).to have_content(info2)
-  # end
+  it 'should show item attributes as headers below the fold' do
+    create_list(:item, 3)
+
+    visit root_path
+
+    expect(page).to have_content(item.name)
+  end
 end
 
 # Business name:
