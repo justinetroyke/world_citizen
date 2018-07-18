@@ -5,6 +5,6 @@ FactoryBot.define do
     donation_amount '10%'
     organization "Scott's Tots"
     category 'Product'
-    stamp 0
+    organization_location '4550 Montgomery Ave., Suite 1100 N, Bethesda, MD 20814'
   end
 end

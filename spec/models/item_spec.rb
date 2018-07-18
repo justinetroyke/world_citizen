@@ -7,6 +7,6 @@ describe Item, type: :model do
     it { should validate_presence_of(:donation_amount) }
     it { should validate_presence_of(:organization) }
     it { should validate_presence_of(:category) }
-    it { should validate_presence_of(:stamp) }
+    it { should validate_presence_of(:organization_location) }
   end
 end

@@ -1,0 +1,21 @@
+<%= form_for @item do |f| %>
+  <%= f.label :business_name %>
+  <%= f.text_field :business_name %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :donation_amount %>
+  <%= f.text_field :donation_amount %>
+
+  <%= f.label :organization %>
+  <%= f.text_field :organization %>
+
+  <%= f.label :organization_location %>
+  <%= f.text_field :organization_location %>
+
+  <%= f.label :category %>
+  <%= f.select :category, ["Food and Beverage", "Product", "BOGO"], {}, {class: "form-control"} %>
+
+  <%= f.submit 'Submit' %>
+<% end %>
