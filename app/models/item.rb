@@ -5,14 +5,4 @@ class Item < ApplicationRecord
                         :organization,
                         :category,
                         :organization_location
-                        :stamp
-
-  enum stamp: [
-    :local,
-    :district,
-    :regional,
-    :national,
-    :international,
-    :world
-  ]
 end

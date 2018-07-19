@@ -25,6 +25,7 @@ RSpec.feature "New account", type: :feature do
         fill_in 'user[email]', with: email
         fill_in 'user[password]', with: password
         fill_in 'user[password_confirmation]', with: password
+
         click_on 'Create Account'
 
         expect(current_path).to eq(user_path(User.last.id))

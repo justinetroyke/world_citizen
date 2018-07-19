@@ -8,8 +8,4 @@ describe User, type: :model do
     it { should validate_presence_of(:password) }
     it { should validate_confirmation_of(:password) }
   end
-
-  describe 'validations' do
-    it { should belong_to(:passport) }
-  end
 end

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    @passport = Passport.create(user_id: @user.id)
     if @user.save
       flash[:success] = "Welcome #{@user.name}!"
 

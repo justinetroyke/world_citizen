@@ -52,7 +52,7 @@ RSpec.describe 'Visitor visits home#index' do
       expect(page).to have_content(item.business_name)
       expect(page).to have_content(item.category)
       expect(page).to have_content(item.name)
-      expect(page).to have_content(item.stamp)
+      expect(page).to have_content('Local')
       expect(page).to have_content(item.organization)
       # expect(page).to have_content("distance")
     end
