@@ -1,5 +1,5 @@
 class AddStampToItems < ActiveRecord::Migration[5.2]
   def change
-    add_column :items, :stamp, :integer, default: 0
+    add_reference :items, :stamp, foreign_key: true
   end
 end
