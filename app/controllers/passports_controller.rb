@@ -1,7 +1,8 @@
 class PassportsController < ApplicationController
   def show
-    user = current_user
-    @passport = Passport.find(params[:id])
+    @user = current_user
+    # @passport = Passport.find(params[:id])
+    # redirect_to user_passport_path(user.id, passport.id)
   end
 
 private
