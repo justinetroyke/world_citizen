@@ -21,16 +21,15 @@ gem 'faraday'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
-  gem 'factory_bot_rails'
+  gem 'launchy'
+  gem 'capybara'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
   gem 'pry'
+  gem 'simplecov'
+  gem 'factory_bot_rails'
 end
 
-group :test do
-  gem 'simplecov'
-  gem 'capybara'
-  gem 'launchy'
-  gem 'shoulda-matchers'
-end
 
 group :development do
   gem 'web-console', '>= 3.3.0'

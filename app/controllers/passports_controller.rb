@@ -1,6 +1,6 @@
 class PassportsController < ApplicationController
   def show
-    user = User.find(params[:user_id])
+    user = current_user
     @passport = Passport.find(params[:id])
   end
 
