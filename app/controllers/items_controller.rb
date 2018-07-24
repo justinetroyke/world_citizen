@@ -27,7 +27,7 @@ private
                                   :donation_amount,
                                   :organization,
                                   :organization_location,
-                                  :category,
+                                  :category_id,
                                   :stamp)
   end
 end
