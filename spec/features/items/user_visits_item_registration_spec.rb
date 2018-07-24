@@ -9,7 +9,6 @@ RSpec.describe 'User visits item#new' do
       org = 'Cystic Fibrosis Foundation'
       org_address = '4550 Montgomery Ave., Suite 1100 N, Bethesda, MD 20814'
       category = "Food and Beverage"
-
       # user = User.create!(name: 'Inigo Montoya', email: 'preparetodie@father.com', password: 'killed')
 
       visit new_item_path
@@ -23,7 +22,6 @@ RSpec.describe 'User visits item#new' do
       click_on 'Submit'
 
       expect(current_path).to eq(item_path(Item.last.id))
-      save_and_open_page
       expect(page).to have_content(biz)
       expect(page).to have_content(name)
       expect(page).to have_content(amt)

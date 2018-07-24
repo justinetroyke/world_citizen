@@ -24,10 +24,10 @@
    background-color: #242c75
  }
  .text-warning {
-   color: #ddcd45
+   color: #17230a
  }
  .background-warning {
-   background-color: #f5f0c6
+   background-color: #3A581B
  }
  .text-danger {
    color: #a7342d
@@ -1099,7 +1099,7 @@
    border-color: #d2d5da
  }
  .border-warning {
-   border-color: #ddcd45
+   border-color: #17230a
  }
  .border-danger {
    border-color: #a7342d
@@ -1225,9 +1225,9 @@
    background-color: #242c75
  }
  .alert-warning {
-   color: #ddcd45;
-   border-color: #ddcd45;
-   background-color: #f5f0c6
+   color: #17230a;
+   border-color: #17230a;
+   background-color: #3A581B
  }
  .alert-danger {
    color: #a7342d;
@@ -1297,7 +1297,7 @@
    background-color: #d2d5da
  }
  .badge.warning {
-   background-color: #ddcd45
+   background-color: #17230a
  }
  .badge.danger {
    background-color: #a7342d
@@ -1460,7 +1460,7 @@
  button.btn-success {
    border-color: #d2d5da;
    background-color: #242c75;
-   color: #000000
+   color: #d2d5da
  }
  .paper-btn.btn-success:hover:active,
  [type=button].btn-success:hover:active,
@@ -1468,16 +1468,16 @@
    background-color: #b7c9a1
  }
  .alert-warning {
-   color: #ddcd45;
-   border-color: #ddcd45;
-   background-color: #f5f0c6
+   color: #17230a;
+   border-color: #17230a;
+   background-color: #3A581B
  }
  .paper-btn.btn-warning,
  [type=button].btn-warning,
  button.btn-warning {
-   border-color: #ddcd45;
-   background-color: #f5f0c6;
-   color: #000000
+   border-color: #17230a;
+   background-color: #3A581B;
+   color: #d2d5da
  }
  .paper-btn.btn-warning:hover:active,
  [type=button].btn-warning:hover:active,

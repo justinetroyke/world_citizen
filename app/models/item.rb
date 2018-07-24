@@ -3,16 +3,8 @@ class Item < ApplicationRecord
                         :name,
                         :donation_amount,
                         :organization,
-                        :category,
-                        :organization_location
-                        :stamp
+                        :organization_location,
+                        :category_id
 
-  enum stamp: [
-    :local,
-    :district,
-    :regional,
-    :national,
-    :international,
-    :world
-  ]
+  belongs_to :category
 end
