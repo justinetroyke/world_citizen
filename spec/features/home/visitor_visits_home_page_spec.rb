@@ -49,7 +49,7 @@ RSpec.describe 'Visitor visits home#index' do
     item_3 = product.items.create!(business_name: 'SameDay Office Supply', name: 'printer cartridge', donation_amount: 'portion of recycled cartridge', organization: 'Denver Rescue Mission', organization_location: '6100 Smith Road, Denver, CO')
 
     visit root_path
-save_and_open_page
+
     expect(page).to have_content(item_2.business_name)
     # expect(page).to have_content(item_3.business_name)
     # expect(page).to_not have_content(item_1.business_name)
