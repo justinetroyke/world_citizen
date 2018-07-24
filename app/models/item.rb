@@ -3,6 +3,8 @@ class Item < ApplicationRecord
                         :name,
                         :donation_amount,
                         :organization,
-                        :category,
-                        :organization_location
+                        :organization_location,
+                        :category_id
+
+  belongs_to :category
 end

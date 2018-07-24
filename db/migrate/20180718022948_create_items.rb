@@ -5,7 +5,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :donation_amount
       t.string :organization
-      t.string :category
     end
   end
 end
