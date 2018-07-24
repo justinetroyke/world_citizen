@@ -8,7 +8,7 @@ RSpec.describe 'User visits item#new' do
       amt = '10'
       org = 'Cystic Fibrosis Foundation'
       org_address = '4550 Montgomery Ave., Suite 1100 N, Bethesda, MD 20814'
-      category = "Food and Beverage"
+      category = "F&B"
       # user = User.create!(name: 'Inigo Montoya', email: 'preparetodie@father.com', password: 'killed')
 
       visit new_item_path

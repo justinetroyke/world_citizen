@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @items = DecorItem.all
+    @items = Item.all
   end
 end

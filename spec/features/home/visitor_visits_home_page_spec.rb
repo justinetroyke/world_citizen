@@ -43,6 +43,33 @@ RSpec.describe 'Visitor visits home#index' do
     expect(page).to have_content('Distance')
   end
 
+  it 'should show local items in relation to the user address' do
+    fb = Category.create!(name: 'F&B')
+    product = Category.create!(name: 'Product')
+
+    item_1 = fb.items.create!(business_name: "BJ's Restaurant & Brewhouse", name: 'Pizookie', donation_amount: 'potion', organization: 'Cystic Fibrosis Foundation', organization_location: '4550 Montgomery Ave., Suite 1100 N, Bethesda, MD 20814')
+    item_2 = fb.items.create!(business_name: 'Luna Gourmet Coffee & Tea Company', name: 'Brew of Bravery Coffee', donation_amount: '2 bags of coffee', organization: 'USO', organization_location: '8400 Peña Blvd unit 492093, Denver, CO 802494')
+    item_3 = product.items.create!(business_name: 'SameDay Office Supply', name: 'printer cartridge', donation_amount: 'portion of recycled cartridge', organization: 'Denver Rescue Mission', organization_location: '6100 Smith Road, Denver, CO, 80216')
+
+    visit root_path
+
+    expect(page).to have_content(item_2.business_name)
+    expect(page).to have_content(item_3.business_name)
+    expect(page).to_not have_content(item_1.business_name)
+    expect(page).to have_content(item_2.category)
+    expect(page).to have_content(item_3.category)
+    expect(page).to_not have_content(item_1.category)
+    expect(page).to have_content('Local')
+    expect(page).to have_content(item_2.name)
+    expect(page).to have_content(item_3.name)
+    expect(page).to_not have_content(item_1.name)
+    expect(page).to have_content(item_2.organization)
+    expect(page).to have_content(item_3.organization)
+    expect(page).to_not have_content(item_1.organization)
+    expect(page).to have_content('27.7 mi')
+    expect(page).to have_content('6.2 mi')
+  end
+
   it 'should show 10 items listed below the fold' do
     items = create_list(:item, 11)
 
@@ -52,9 +79,7 @@ RSpec.describe 'Visitor visits home#index' do
       expect(page).to have_content(item.business_name)
       expect(page).to have_content(item.category)
       expect(page).to have_content(item.name)
-      expect(page).to have_content('Local')
       expect(page).to have_content(item.organization)
-      # expect(page).to have_content("distance")
     end
   end
 end
