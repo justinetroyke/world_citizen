@@ -4,7 +4,6 @@ class HomeController < ApplicationController
     user_address = "1801 Chestnut Pl, Denver, CO"
     start = user_address.sub(' ','+').gsub(',','+').sub(' ','+').gsub(' ','')
     destination = @items.first.organization_location
-    response = Faraday.get("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=#{start}&destinations=#{destination}&key=AIzaSyBViIJ2f4FyRSr6dWGJXK46UPxsSlrb0pk")
 
     body = JSON.parse(response.body)
     @distance = body['rows'].first['elements'].first['distance']['text']

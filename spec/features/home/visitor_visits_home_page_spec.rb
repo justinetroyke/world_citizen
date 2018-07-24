@@ -44,9 +44,9 @@ RSpec.describe 'Visitor visits home#index' do
     start = "1801 Chestnut Pl, Dever, CO, 80202"
     fb = Category.create!(name: 'F&B')
     product = Category.create!(name: 'Product')
-    # item_1 = fb.items.create!(business_name: "BJ's Restaurant & Brewhouse", name: 'Pizookie', donation_amount: 'potion', organization: 'Cystic Fibrosis Foundation', organization_location: '4550 Montgomery Ave., Suite 1100 N, Bethesda, MD 20814')
-    item_2 = fb.items.create!(business_name: 'Luna Gourmet Coffee & Tea Company', name: 'Brew of Bravery Coffee', donation_amount: '2 bags of coffee', organization: 'USO', organization_location: '8400 Pena Blvd unit 492093, Denver, CO 802494')
-    item_3 = product.items.create!(business_name: 'SameDay Office Supply', name: 'printer cartridge', donation_amount: 'portion of recycled cartridge', organization: 'Denver Rescue Mission', organization_location: '6100 Smith Road, Denver, CO, 80216')
+    # item_1 = fb.items.create!(business_name: "BJ's Restaurant & Brewhouse", name: 'Pizookie', donation_amount: 'potion', organization: 'Cystic Fibrosis Foundation', organization_location: '4550 Montgomery Ave., Suite 1100 N, Bethesda, MD')
+    item_2 = fb.items.create!(business_name: 'Luna Gourmet Coffee & Tea Company', name: 'Brew of Bravery Coffee', donation_amount: '2 bags of coffee', organization: 'USO', organization_location: '8400 Pena Blvd unit 492093, Denver, CO')
+    item_3 = product.items.create!(business_name: 'SameDay Office Supply', name: 'printer cartridge', donation_amount: 'portion of recycled cartridge', organization: 'Denver Rescue Mission', organization_location: '6100 Smith Road, Denver, CO')
 
     visit root_path
 save_and_open_page
