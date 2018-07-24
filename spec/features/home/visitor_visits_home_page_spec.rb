@@ -41,6 +41,7 @@ RSpec.describe 'Visitor visits home#index' do
   end
 
   it 'should show local items in relation to the user address' do
+    start = "1801 Chestnut Pl, Dever, CO, 80202"
     fb = Category.create!(name: 'F&B')
     product = Category.create!(name: 'Product')
     # item_1 = fb.items.create!(business_name: "BJ's Restaurant & Brewhouse", name: 'Pizookie', donation_amount: 'potion', organization: 'Cystic Fibrosis Foundation', organization_location: '4550 Montgomery Ave., Suite 1100 N, Bethesda, MD 20814')
@@ -48,7 +49,6 @@ RSpec.describe 'Visitor visits home#index' do
     item_3 = product.items.create!(business_name: 'SameDay Office Supply', name: 'printer cartridge', donation_amount: 'portion of recycled cartridge', organization: 'Denver Rescue Mission', organization_location: '6100 Smith Road, Denver, CO, 80216')
 
     visit root_path
-# binding.pry
 
     expect(page).to have_content(item_2.business_name)
     # expect(page).to have_content(item_3.business_name)

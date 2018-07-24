@@ -24,6 +24,7 @@
   </div>
 </center>
 <br>
+
 <table class="table-alternating">
   <thead>
     <tr>
@@ -38,11 +39,11 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td>Luna Gourmet Coffee & Tea Company</td>
-        <td>F&B</td>
+        <td><%= item.business_name %></td>
+        <td><%= item.category.name %></td>
         <td>Local</td>
-        <td>Brew of Bravery Coffee</td>
-        <td>USO</td>
+        <td><%= item.name %></td>
+        <td><%= item.organization %></td>
         <td>27.7 mi</td>
       </tr>
     <% end %>
