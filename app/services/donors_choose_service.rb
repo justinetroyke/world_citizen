@@ -1,8 +1,9 @@
 class DonorsChooseService
   def initialize(path, params = {})
     @url = "https://api.donorschoose.org/common/"
-    @path = "json_feed.html?&APIKey=#{ENV['donors_choose_api_key']}"
-    @params = params
+    @path = path
+    @params = {APIKey: ENV['donors_choose_api_key']}.merge(params)
+
   end
 
   def conn

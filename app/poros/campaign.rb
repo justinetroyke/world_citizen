@@ -1,16 +1,16 @@
 class Campaign
-  attr_reader :prop
+  attr_reader :proposal
 
-  def initialize(prop)
-    @prop = prop
+  def initialize(proposal)
+    @proposal = proposal
   end
 
   def title
-    @prop['title']
+    @proposal['title']
   end
 
   def url
-    @prop["fundURL"]
+    @proposal["proposalURL"]
   end
 #future calculation to be made with a distance calculator(likely the decorater)
   def stamp
@@ -18,6 +18,6 @@ class Campaign
   end
 
   def percent_funded
-    "#{@prop["percentFunded"]}%"
+    "#{@proposal["percentFunded"]}%"
   end
 end
