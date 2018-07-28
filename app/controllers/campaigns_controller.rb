@@ -4,6 +4,5 @@ class CampaignsController < ApplicationController
     results = JSON.parse(response.body)
     prop = results["proposals"].first
     @campaigns = Campaign.new(prop)
-    binding.pry
   end
 end
