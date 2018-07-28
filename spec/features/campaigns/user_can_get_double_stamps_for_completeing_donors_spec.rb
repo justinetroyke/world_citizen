@@ -15,13 +15,11 @@ describe 'get double stamps for completing donors choose donation' do
       # I visit 'campaigns#index'
       # I see a list of donor campaigns
       within('.campaigns') do
-        campaign.each do |campaign|
-          expect(page).to have_content(campaign.title)
-          expect(page).to have_content(campaign.url)
-          expect(page).to have_content(campaign.stamp)
-          expect(page).to have_content(campaign.percent_funded)
-          expect(page).to have_link('Completed')
-        end
+        expect(page).to have_content("Let's Meet New Seats!")
+        expect(page).to have_content("https://www.donorschoose.org/project/lets-meet-new-seats/3391401/?utm_source=api&utm_medium=feed&utm_content=bodylink&utm_campaign=DONORSCHOOSE")
+        expect(page).to have_content("National")
+        expect(page).to have_content("76%")
+        expect(page).to have_link('Completed')
       end
       # for each campaign there is a title, link url, stamp and percent funded.
       # each result has a completed button
