@@ -14,7 +14,6 @@ describe 'get double stamps for completing donors choose donation' do
       visit campaigns_path
       # I visit 'campaigns#index'
       # I see a list of donor campaigns
-      campaigns = Campaign.all
       within('.campaigns') do
         campaign.each do |campaign|
           expect(page).to have_content(campaign.title)
