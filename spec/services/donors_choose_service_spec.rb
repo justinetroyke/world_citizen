@@ -5,8 +5,8 @@ describe "returns data from donors choose" do
     params = {state: "CA"}
     path = ['json_feed.html']
 
-    response = DonorsChooseService.new(path, params).campaigns 
+    response = DonorsChooseService.new(path, params).campaigns
 
-    expect(response.count).to eq(7)
+    expect(response.count).to eq(10)
   end
 end
