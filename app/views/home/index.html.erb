@@ -28,11 +28,11 @@
 <div class="search">
   <%= form_tag(items_path, method: "get") do %>
     <%= label_tag :street %>
-    <%= text_field_tag :street %>
+    <%= text_field_tag :street_address %>
     <%= label_tag :city %>
     <%= text_field_tag :city %>
-    <%= label_tag :street %>
-    <%= text_field_tag :street %>
+    <%= label_tag :state %>
+    <%= select_tag :state, options_for_select(states) %>
     <%= submit_tag "Search" %>
   <% end %>
 </div>

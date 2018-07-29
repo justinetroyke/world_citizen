@@ -14,13 +14,13 @@ describe 'returns 10 closest stamps to address of user' do
         # As a register user
         visit root_path
         # When I visit "/"
-        within('.search') do
-          fill_in :street, with: street
+         within('.search') do
+          fill_in :street_address, with: street
           # And I fill in
           # street address box with "1801 Chestnut Pl"
           fill_in :city, with: city
           # city box with "Denver"
-          fill_in :state, with: state
+          select(state, from: 'state')
           # state box with "CO"
           click_on 'Search'
           # and click "search"
