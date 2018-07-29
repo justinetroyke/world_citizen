@@ -3,7 +3,6 @@ class DonorsChooseService
     @url = "https://api.donorschoose.org/common/"
     @path = path
     @params = {APIKey: ENV['donors_choose_api_key']}.merge(params)
-
   end
 
   def conn

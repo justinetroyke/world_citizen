@@ -1,10 +1,11 @@
 <div class="campaigns">
   <% if @campaigns %>
-
-    <li><%= @campaigns.title %></li>
-    <li><%= @campaigns.url %></li>
-    <li><%= @campaigns.stamp %></li>
-    <li><%= @campaigns.percent_funded %></li>
-    <li><%= link_to 'Completed', user_passport_path(current_user.id, @campaigns.stamp) %></li>
-<% end %>
+    <% @campaigns.each do |campaign| %>
+      <li><%= campaign.title %></li>
+      <li><%= campaign.url %></li>
+      <li><%= campaign.stamp %></li>
+      <li><%= campaign.percent_funded %></li>
+      <li><%= link_to 'Completed', user_passport_path(current_user.id, campaign.stamp) %></li>
+    <% end %>
+  <% end %>
 </div>

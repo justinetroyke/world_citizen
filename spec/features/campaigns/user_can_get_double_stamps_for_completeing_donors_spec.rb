@@ -15,10 +15,10 @@ describe 'get double stamps for completing donors choose donation' do
       # I visit 'campaigns#index'
       # I see a list of donor campaigns
       within('.campaigns') do
-        expect(page).to have_content("Let&#039;s Meet New Seats!")
-        expect(page).to have_content("https://secure.donorschoose.org/donors/givingCart.html?proposalid=3391401&donationAmount=45&utm_source=api&utm_medium=feed&utm_content=fundlink&utm_campaign=DONORSCHOOSE")
+        expect(page).to have_content("Flexible Seating!")
+        expect(page).to have_content("https://www.donorschoose.org/project/flexible-seating/3418105/?utm_source=api&utm_medium=feed&utm_content=bodylink&utm_campaign=DONORSCHOOSE")
         expect(page).to have_content("National")
-        expect(page).to have_content("84%")
+        expect(page).to have_content("83%")
         expect(page).to have_link('Completed')
       end
       # for each campaign there is a title, link url, stamp and percent funded.
