@@ -1,6 +1,6 @@
-FactoryBot.define do
-  factory :location do
-    user nil
-    address "MyString"
-  end
-end
+# FactoryBot.define do
+#   factory :location do
+#     user nil
+#     address "MyString"
+#   end
+# end

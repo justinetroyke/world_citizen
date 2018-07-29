@@ -1,0 +1,11 @@
+<div class="campaigns">
+  <% if @campaigns %>
+    <% @campaigns.each do |campaign| %>
+      <li><%= campaign.title %></li>
+      <li><%= campaign.url %></li>
+      <li><%= campaign.stamp %></li>
+      <li><%= campaign.percent_funded %></li>
+      <li><%= link_to 'Completed', user_passport_path(current_user.id, campaign.stamp) %></li>
+    <% end %>
+  <% end %>
+</div>
