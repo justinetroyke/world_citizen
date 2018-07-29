@@ -4,9 +4,6 @@ describe 'get double stamps for completing donors choose donation' do
   context 'As a registered user' do
     it 'click on donors choose link and it shows list of campaigns' do
       VCR.use_cassette("features/donors_choose") do
-        street = '1801 Chestnut Pl'
-        city = 'Denver'
-        state = "CO"
         user = User.create(name: 'Burt Macklin', email: 'stunna@fbi.com', password: '123abc')
         Passport.create(user_id: user.id)
 
@@ -31,7 +28,6 @@ end
 
 
 # Results can be sorted by stamp level
-
 # when I click completed on a campaign
 # Then my current path should be user_passport_path
 # and there is a message that states "You have earned to #{level} Stamps for your direct contribution! Thank you for your citizenship!"

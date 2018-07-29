@@ -25,6 +25,18 @@
 </center>
 <br>
 
+<div class="search">
+  <%= form_tag(items_path, method: "get") do %>
+    <%= label_tag :street %>
+    <%= text_field_tag :street %>
+    <%= label_tag :city %>
+    <%= text_field_tag :city %>
+    <%= label_tag :street %>
+    <%= text_field_tag :street %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>
+
 <table class="table-alternating">
   <thead>
     <tr>
