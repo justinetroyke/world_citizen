@@ -44,30 +44,3 @@
       </div>
     </center>
 </article>
-
-<table class="table-alternating">
-  <thead>
-    <tr>
-      <th>Business Name</th>
-      <th>Category</th>
-      <th>Stamp</th>
-      <th>Item</th>
-      <th>Who You're Helping</th>
-      <th>Distance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% if @items %>
-      <% @items.each do |item| %>
-        <tr>
-          <td><%= item.business_name %></td>
-          <td><%= item.category.name %></td>
-          <td>Local</td>
-          <td><%= item.name %></td>
-          <td><%= item.organization %></td>
-          <td><%= @distance %></td>
-        </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>

@@ -25,11 +25,11 @@ describe 'returns 10 closest stamps to address of user' do
           click_on 'Search'
           # and click "search"
         end
-        expect(current_path).to eq(root_path)
+        expect(current_path).to eq(stamps_path)
         # Then my current path should be "/"
         # And I should see the 10 items with the closest business address to the submitted address
-        expect(page).to have_selector('.items', count: 10)
-        within('.items') do
+        expect(page).to have_selector('.stamps', count: 10)
+        within('.stamps') do
           expect(item).to have_content(item.business_name)
           expect(item).to have_content(item.category)
           expect(item).to have_content(item.stamp)
