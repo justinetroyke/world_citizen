@@ -17,8 +17,7 @@ class CampaignPresenter
   end
 
   def campaigns
-    results.each do |result|
-      binding.pry
+    results.map do |result|
       Campaign.new(result)
     end
   end
