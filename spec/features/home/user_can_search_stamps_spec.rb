@@ -30,11 +30,12 @@ describe 'returns 10 closest stamps to address of user' do
         # And I should see the 10 items with the closest business address to the submitted address
         expect(page).to have_selector('.stamps', count: 10)
         within('.stamps') do
-          expect(item).to have_content(item.business_name)
-          expect(item).to have_content(item.category)
-          expect(item).to have_content(item.stamp)
-          expect(item).to have_content(item.organization)
-          expect(item).to have_content(item.distance)
+          expect(item).to have_content('Hedge Row')
+          expect(item).to have_content('F&B')
+          expect(item).to have_content('Local')
+          expect(item).to have_content('cocktail booklet')
+          expect(item).to have_content('Surfers for Autism Coffee')
+          expect(item).to have_content('4.9 mi')
         end
       end
     end
