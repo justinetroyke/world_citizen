@@ -7,10 +7,9 @@ describe "returns campaigns for state" do
 
     expect(campaigns.count).to eq(10)
     campaign = campaigns.last
-
-    expect(campaign.title).to eq("Going Global With a Read-Aloud With a Positive Message")
-    expect(campaign.url).to eq("https://www.donorschoose.org/project/going-global-with-a-read-aloud-with-a-po/3380645/?utm_source=api&utm_medium=feed&utm_content=bodylink&utm_campaign=DONORSCHOOSE")
+    expect(campaign.title).to eq("Tots for Technology and Science")
+    expect(campaign.url).to eq("https://www.donorschoose.org/project/tots-for-technology-and-science/3210273/?utm_source=api&utm_medium=feed&utm_content=bodylink&utm_campaign=DONORSCHOOSE")
     expect(campaign.stamp).to eq("National")
-    expect(campaign.percent_funded).to eq("82%")
+    expect(campaign.percent_funded).to eq("83%")
   end
 end
