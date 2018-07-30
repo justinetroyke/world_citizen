@@ -12,7 +12,7 @@ describe 'rewards stamp to passport when item purchased' do
       city = 'Denver'
       state = "CO"
       message = "Congratulations! You've earned a Local Stamp for your Passport!"
-      message2 = "Great job giving back! In a mood to give more? Click HERE to collect double the stamps for your passport by directly sponsoring a DonorChose campaign!"
+      message2 = "Great job giving back! In a mood to give more? To directly sponsor a DonorsChoose campaign and collect double the stamps for your passport click here!"
       user = User.create(name: 'Burt Macklin', email: 'stunna@fbi.com', password: '123abc')
       passport = user.passports.create!
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
@@ -47,7 +47,6 @@ describe 'rewards stamp to passport when item purchased' do
       # I see all the item details
       click_on('Item Purchased')
       # I click on item purchased
-
       expect(current_path).to eq(user_passport_path(user.id, passport.id))
       # My current path is user_passport_path
       expect(page).to have_content(message)
@@ -55,7 +54,7 @@ describe 'rewards stamp to passport when item purchased' do
       expect(page).to have_content(message2)
       # I should see a second message that says
       # "Great job giving back! In a mood to give more? Click HERE to collect double the stamps for your passport by directly sponsoring a DonorChose campaign!"
-      expect(page).to have_link(campaigns_path)
+      expect(page).to have_link('here')
     end
   end
 end
