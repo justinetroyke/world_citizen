@@ -31,23 +31,26 @@ class StampPresenter
   end
 
   def item(item)
-    item.category
   end
 
   def organization(item)
   end
 
   def item_distance(item)
+    GoogleDistanceService.new(@user_location, item['business_location']).get_distance
   end
 
   def stamps
     @items.map do |item|
-      item['business_name'] = business_name(item)
-      category(item)
-      item['stamp_id'] = stamp(item)
-      item['name'] = item(item)
-      item['organization'] = organization(item)
-      item['business_address'] = item_distance(item)
+      stamp = stamp(item)
+      distance = item_distance(item)
+      SearchStamp.new(item, stamp, distance)
+      # item['business_name'] = business_name(item)
+      # category(item)
+      # item['stamp_id'] = stamp(item)
+      # item['name'] = item(item)
+      # item['organization'] = organization(item)
+      # item['business_location'] = item_distance(item)
     end
   end
 end
