@@ -14,7 +14,7 @@ describe 'rewards stamp to passport when item purchased' do
       message = "Congratulations! You've earned a Local Stamp for your Passport!"
       message2 = "Great job giving back! In a mood to give more? Click HERE to collect double the stamps for your passport by directly sponsoring a DonorChose campaign!"
       user = User.create(name: 'Burt Macklin', email: 'stunna@fbi.com', password: '123abc')
-      user.passports.create!
+      passport = user.passports.create!
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       # As a register user
       visit root_path
@@ -48,7 +48,7 @@ describe 'rewards stamp to passport when item purchased' do
       click_button('Item Purchased')
       # I click on item purchased
 
-      expect(current_path).to eq(user_passport_path(user.id))
+      expect(current_path).to eq(user_passport_path(user.id, passport.id))
       # My current path is user_passport_path
       expect(page).to have_content(message)
       # I see a message that says "You've earned #{level} Stamp! Congratulations"

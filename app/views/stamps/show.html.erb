@@ -8,7 +8,7 @@
     <li>Goes to: <%= @item.organization %></li>
     <li>Stamp: <%= @stamp %></li>
   <% end %>
-  <a href="<%= user_passport_path(current_user.id) %>">
+  <a href="<%= user_passport_path(current_user.id, @passport.id) %>">
     <input type="button" class="paper-btn btn-primary" value="Primary"/>
     <button class="btn-warning">Item Purchased</button>
   </a>

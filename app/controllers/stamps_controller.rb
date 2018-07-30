@@ -7,6 +7,7 @@ class StampsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @passport = Passport.find_by(user_id: current_user.id)
     @stamp = params['format']
   end
 end
