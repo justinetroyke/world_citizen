@@ -14,7 +14,7 @@ describe "returns stamps with distance to item and stamp level" do
     items << fb.items.create!(business_name: 'Hedge Row', name: 'cocktail booklet', donation_amount: 'proceeds', organization: 'The Park People', organization_location: '1510 S. Grant St. Denver, CO 80210')
     items << product.items.create!(business_name: 'SameDay Office Supply', name: 'printer cartridge', donation_amount: 'portion of recycled cartridge', organization: 'Denver Rescue Mission', organization_location: '6100 Smith Road, Denver, CO, 80216')
 
-    stamps = StampPresenter.new(address, items).stamp
+    stamps = StampPresenter.new(address, items).stamps
 
     expect(stamps.count).to eq(3)
 

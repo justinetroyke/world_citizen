@@ -7,7 +7,8 @@ class StampPresenter
     @items = items
   end
 
-  def business_name
+  def business_name(item)
+    item['business_name']
   end
 
   def category
@@ -19,13 +20,13 @@ class StampPresenter
       org_distance = response.split.first.gsub(',', '').to_i
       if org_distance < 25
         item['stamp_id'] = 0
-      else org_distance > 25 & < 50
+      elsif (26...50).include? org_distance
         item['stamp_id'] = 1
-      else org_distance > 50 & < 250
+      elsif (51...250).include? org_distance
         item['stamp_id'] = 2
-      else org_distance > 250 & < 2000
+      elsif (251...2000).include? org_distance
         item['stamp_id'] = 3
-      else org_distance > 2000
+      elsif org_distance > 2000
         item['stamp_id'] = 4
       end
     end
@@ -41,6 +42,9 @@ class StampPresenter
   end
 
   def stamps
-
+    @items.map do |item|
+      item['business_name'] = business_name(item)
+      item['category'] = category(item)
+    end
   end
 end
