@@ -5,6 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Stamp.create!(name: 'Local')
+Stamp.create!(name: 'District')
+Stamp.create!(name: 'Regional')
+Stamp.create!(name: 'National')
+Stamp.create!(name: 'International')
+
 fb = Category.create!(name: 'F&B')
 product = Category.create!(name: 'Product')
 

@@ -15,6 +15,7 @@ describe 'rewards stamp to passport when item purchased' do
       message2 = "Great job giving back! In a mood to give more? To directly sponsor a DonorsChoose campaign and collect double the stamps for your passport click here!"
       user = User.create(name: 'Burt Macklin', email: 'stunna@fbi.com', password: '123abc')
       passport = user.passports.create!
+      Stamp.create!(name: 'Local')
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       # As a register user
       visit root_path
