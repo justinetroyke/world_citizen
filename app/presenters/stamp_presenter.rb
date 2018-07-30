@@ -7,13 +7,6 @@ class StampPresenter
     @items = items
   end
 
-  def business_name(item)
-    item['business_name']
-  end
-
-  def category(item)
-  end
-
   def stamp(item)
     response = GoogleDistanceService.new(@user_location, item['organization_location']).get_distance
     org_distance = response.split.first.gsub(',', '').to_i
@@ -30,12 +23,6 @@ class StampPresenter
     end
   end
 
-  def item(item)
-  end
-
-  def organization(item)
-  end
-
   def item_distance(item)
     GoogleDistanceService.new(@user_location, item['business_location']).get_distance
   end
@@ -45,12 +32,6 @@ class StampPresenter
       stamp = stamp(item)
       distance = item_distance(item)
       SearchStamp.new(item, stamp, distance)
-      # item['business_name'] = business_name(item)
-      # category(item)
-      # item['stamp_id'] = stamp(item)
-      # item['name'] = item(item)
-      # item['organization'] = organization(item)
-      # item['business_location'] = item_distance(item)
     end
   end
 end
