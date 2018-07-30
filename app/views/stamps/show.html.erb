@@ -3,11 +3,10 @@
   <% if @item %>
     <%= @item.business_name %>
     <%= @item.business_location %>
-    <%= @item.category %>
+    <%= @item.category.name %>
     <%= @item.donation_amount %>
     <%= @item.organization %>
     <%= @item.organization_location %>
-    <%= @item.stamp %>
-    <%= @item.distance %>
+    <%= @stamp %>
   <% end %>
 </div>

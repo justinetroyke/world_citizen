@@ -36,17 +36,16 @@ describe 'rewards stamp to passport when item purchased' do
         click_on('cocktail booklet')
       end
       # click on an item
-      expect(current_path).to eq(stamp_path(item.id))
+      expect(current_path).to eq("/stamps/#{item.id}.Local")
       # my current path is "item/show"
 
       expect(page).to have_content(item.business_name)
       expect(page).to have_content(item.business_location)
-      expect(page).to have_content(item.category)
+      expect(page).to have_content(item.category.name)
       expect(page).to have_content(item.name)
       expect(page).to have_content(item.donation_amount)
       expect(page).to have_content(item.organization)
       expect(page).to have_content(item.organization_location)
-      expect(page).to have_content('4.9 mi')
       # I see all the item details
 
       click_on('Item Purchased')
