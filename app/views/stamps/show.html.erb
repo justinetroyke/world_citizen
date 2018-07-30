@@ -6,10 +6,6 @@
     <li>Category: <%= @item.category.name %></li>
     <li>Amount: <%= @item.donation_amount %></li>
     <li>Goes to: <%= @item.organization %></li>
-    <li>Stamp: <%= @stamp %></li>
   <% end %>
-  <a href="<%= user_passport_path(current_user.id, @passport.id) %>">
-    <input type="button" class="paper-btn btn-primary" value="Primary"/>
-    <button class="btn-warning">Item Purchased</button>
-  </a>
+  <%= link_to "Item Purchased", user_passport_path(current_user.id, @passport.id) %>
 </div>
