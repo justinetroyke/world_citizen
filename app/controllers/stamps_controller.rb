@@ -4,4 +4,10 @@ class StampsController < ApplicationController
     items = Item.all
     @stamps = StampPresenter.new(address, items).stamps
   end
+
+  def show
+    binding.pry
+    @item = Item.find(params[:id])
+    @stamp = params['format']
+  end
 end

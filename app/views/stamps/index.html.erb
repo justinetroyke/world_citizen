@@ -17,7 +17,7 @@
             <td><%= stamp.business_name %></td>
             <td><%= stamp.category %></td>
             <td><%= stamp.stamp %></td>
-            <td><%= stamp.item %></td>
+            <td><%= link_to stamp.item, stamp_path(stamp.id, stamp.stamp) %></td>
             <td><%= stamp.organization %></td>
             <td><%= stamp.distance %></td>
           </tr>
