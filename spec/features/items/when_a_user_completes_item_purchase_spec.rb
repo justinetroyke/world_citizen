@@ -11,6 +11,8 @@ describe 'rewards stamp to passport when item purchased' do
       street = '1801 Chestnut Pl'
       city = 'Denver'
       state = "CO"
+      message = "Congratulations! You've earned a Local Stamp for your Passport!"
+      message2 = "Great job giving back! In a mood to give more? Click HERE to collect double the stamps for your passport by directly sponsoring a DonorChose campaign!"
       user = User.create(name: 'Burt Macklin', email: 'stunna@fbi.com', password: '123abc')
       Passport.create(user_id: user.id)
 
@@ -35,6 +37,7 @@ describe 'rewards stamp to passport when item purchased' do
       end
       # click on an item
       expect(current_path).to eq(item_path(item.id))
+      # my current path is "item/show"
 
       expect(page).to have_content(item.business_name)
       expect(page).to have_content(item.business_location)
@@ -43,16 +46,19 @@ describe 'rewards stamp to passport when item purchased' do
       expect(page).to have_content(item.organization)
       expect(page).to have_content(item.organization_location)
       expect(page).to have_content('4.9 mi')
+      # I see all the item details
 
-      
+      click_on('Item Purchased')
+      # I click on item purchased
+
+      expect(current_path).to eq(user_passport_path(user.id))
+      # My current path is user_passport_path
+      expect(page).to have_content(message)
+      # I see a message that says "You've earned #{level} Stamp! Congratulations"
+      expect(page).to have_content(message2)
+      # I should see a second message that says
+      # "Great job giving back! In a mood to give more? Click HERE to collect double the stamps for your passport by directly sponsoring a DonorChose campaign!"
+      expect(page).to have_link(campaigns_path)
     end
   end
 end
-
-# my current path is "stamp/show"
-# I see all the item details
-# I click on item purchased
-# My current path is user_passport_path
-# I see a message that says "You've earned #{level} Stamp! Congratulations"
-# I should see a second message that says
-# "Great job giving back! In a mood to give more? Click HERE to collect double the stamps for your passport by directly sponsoring a DonorChose campaign!"
