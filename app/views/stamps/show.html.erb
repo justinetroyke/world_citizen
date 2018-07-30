@@ -6,6 +6,7 @@
     <li>Category: <%= @item.category.name %></li>
     <li>Amount: <%= @item.donation_amount %></li>
     <li>Goes to: <%= @item.organization %></li>
+    <li>Stamp: <%= @stamp %></li>
   <% end %>
-  <%= link_to "Item Purchased", user_passport_path(current_user.id, @passport.id) %>
+  <%= link_to "Item Purchased", user_passport_path(current_user.id, @passport.id, stamp: @stamp) %>
 </div>

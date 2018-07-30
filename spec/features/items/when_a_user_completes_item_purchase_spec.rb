@@ -46,7 +46,6 @@ describe 'rewards stamp to passport when item purchased' do
       expect(page).to have_content(item.organization)
       # I see all the item details
       click_on('Item Purchased')
-      save_and_open_page
       # I click on item purchased
 
       expect(current_path).to eq(user_passport_path(user.id, passport.id))
