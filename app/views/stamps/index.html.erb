@@ -15,9 +15,9 @@
         <% @stamps.each do |stamp| %>
           <tr>
             <td><%= stamp.business_name %></td>
-            <td><%= stamp.category.name %></td>
+            <td><%= stamp.category %></td>
             <td><%= stamp.stamp %></td>
-            <td><%= stamp.name %></td>
+            <td><%= stamp.item %></td>
             <td><%= stamp.organization %></td>
             <td><%= stamp.distance %></td>
           </tr>
