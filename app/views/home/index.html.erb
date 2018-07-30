@@ -24,28 +24,23 @@
   </div>
 </center>
 <br>
+<br>
 
-<table class="table-alternating">
-  <thead>
-    <tr>
-      <th>Business Name</th>
-      <th>Category</th>
-      <th>Stamp</th>
-      <th>Item</th>
-      <th>Who You're Helping</th>
-      <th>Distance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.business_name %></td>
-        <td><%= item.category.name %></td>
-        <td>Local</td>
-        <td><%= item.name %></td>
-        <td><%= item.organization %></td>
-        <td><%= @distance %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<article class="article">
+  <h1 class="article-title"><a href="">Start searching for Stamps near you!</a></h1>
+    <center>
+      <div class="row">
+        <div class="search">
+          <%= form_tag(stamps_path, method: "get") do %>
+            <%= label_tag :street %>
+            <%= text_field_tag :street_address %>
+            <%= label_tag :city %>
+            <%= text_field_tag :city %>
+            <%= label_tag :state %>
+            <%= select_tag :state, options_for_select(states) %>
+            <%= submit_tag "Search" %>
+          <% end %>
+        </div>
+      </div>
+    </center>
+</article>
