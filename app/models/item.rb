@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   before_save :format_org_location
 
   validates_presence_of :business_name,
+                        :business_location,
                         :name,
                         :donation_amount,
                         :organization,

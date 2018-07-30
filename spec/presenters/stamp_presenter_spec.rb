@@ -11,7 +11,7 @@ describe "returns stamps with distance to item and stamp level" do
     items = []
     items << fb.items.create!(business_name: 'Luna Gourmet Coffee & Tea Company', name: 'Surfers for Autism Coffee', donation_amount: '$1', organization: 'Surfers for Autism', organization_location: '7491 N. Federal Hwy, C5-180
     Boca Raton  FL  33487')
-    items << fb.items.create!(business_name: 'Hedge Row', name: 'cocktail booklet', donation_amount: 'proceeds', organization: 'The Park People', organization_location: '1510 S. Grant St. Denver, CO 80210')
+    items << fb.items.create!(business_name: 'Hedge Row', business_location: '100 Steele St, Denver, CO 80206', name: 'cocktail booklet', donation_amount: 'proceeds', organization: 'The Park People', organization_location: '1510 S. Grant St. Denver, CO 80210')
     items << product.items.create!(business_name: 'SameDay Office Supply', name: 'printer cartridge', donation_amount: 'portion of recycled cartridge', organization: 'Denver Rescue Mission', organization_location: '6100 Smith Road, Denver, CO, 80216')
 
     stamps = StampPresenter.new(address, items).stamps
