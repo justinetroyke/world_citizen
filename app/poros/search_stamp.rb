@@ -26,7 +26,17 @@ class SearchStamp
   end
 
   def stamp
-    'Local'
+    if @stamp == 0
+      "Local"
+    elsif @stamp == 1
+      'District'
+    elsif @stamp == 2
+      'Regional'
+    elsif @stamp == 3
+      'National'
+    elsif @stamp == 4
+      'International'
+    end
   end
 
   def item_distance
