@@ -1,6 +1,6 @@
 class StampsController < ApplicationController
   def index
-    if current_user
+    if params['street_address']
       address = "#{params['street_address'].gsub(' ','+')}+#{params['city']}+#{params['state']}"
       @items = Item.all
       @stamps = StampPresenter.new(address, @items).stamps
