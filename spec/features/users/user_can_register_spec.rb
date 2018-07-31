@@ -36,30 +36,50 @@ RSpec.feature "New account", type: :feature do
       end
     end
 
-    context 'log into account' do
-      xit 'should redirect to the users passport' do
+    context 'account registration creates passport' do
+      it 'should show user passport when they click link' do
+        top_message = 'MY JOURNEY TO WORLD CITIZENSHIP'
+        a_tot = 'Local Citizenship'
+        numa = '0/25 stamps'
+        b_tot = 'District Citizenship'
+        numb = '0/20 stamps'
+        c_tot = 'Regional Citizenship'
+        numc = '0/15 stamps'
+        d_tot = 'National Citizenship'
+        numd = '0/20 stamps'
+        e_tot = 'International Citizenship'
+        nume = '0/25 stamps'
         name = 'Karen Kilgariff'
         email = 'killgariff@mfm.com'
         password = 'ssdgm'
-        user = User.create(name: name, email: email, password: password)
-        passport = Passport.create(user_id: user.id)
 
-        visit root_path
-        click_link 'Log In'
+        visit new_user_path
 
-        expect(current_path).to eq(login_path)
+        fill_in 'user[name]', with: name
+        fill_in 'user[email]', with: email
+        fill_in 'user[password]', with: password
+        fill_in 'user[password_confirmation]', with: password
 
-        fill_in :email, with: email
-        fill_in :password, with: password
+        click_on('Create Account')
 
-        click_on 'Log in'
+        expect(current_path).to eq(user_path(User.last.id))
 
-        expect(current_path).to eq(user_path(user))
-        expect(page).to have_content("Log Out")
+        within('.my_passport') do
+          click_on('My Passport')
+        end
 
-        click_link "Log Out"
-
-        expect(current_path).to eq(root_path)
+        expect(page).to have_link('My Passport')
+        expect(page).to have_content(top_message)
+        expect(page).to have_content(numa)
+        expect(page).to have_content(numb)
+        expect(page).to have_content(numc)
+        expect(page).to have_content(numd)
+        expect(page).to have_content(nume)
+        expect(page).to have_content(a_tot)
+        expect(page).to have_content(b_tot)
+        expect(page).to have_content(c_tot)
+        expect(page).to have_content(d_tot)
+        expect(page).to have_content(e_tot)
       end
     end
   end

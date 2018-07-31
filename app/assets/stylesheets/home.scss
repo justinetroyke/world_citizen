@@ -37,10 +37,6 @@ nav a:hover{
   font-weight: 800;
 }
 
-.world-citizen-logo{
-  float: static;
-}
-
 .hero{
   background:
   linear-gradient(
@@ -49,7 +45,6 @@ nav a:hover{
     url(https://source.unsplash.com/collection/2435000/1600x900);
   background-position: center;
   background-size: cover;
-  height: 100vh;
 }
 
 .hero-text{
@@ -66,7 +61,7 @@ nav a:hover{
   grid-template-columns: 1fr 1fr;
   margin-top: .5rem;
   grid-gap: 5rem;
-  padding: 3.5rem;
+  padding: 3.0rem;
 }
 
 h3 {
@@ -83,7 +78,7 @@ center h3{
   color: white;
   text-transform: uppercase;
   font-size: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: .5rem;
 }
 
 .search{
@@ -101,7 +96,6 @@ center h3{
 
 .search-button{
   padding: .3rem;
-  align-content: bottom;
   width: 4rem;
 }
 
@@ -120,4 +114,16 @@ input{
 
 input:placeholder{
   margin-left: 2rem;
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+
+.search-section h3{
+  color: white;
+  margin-bottom: 1rem;
 }

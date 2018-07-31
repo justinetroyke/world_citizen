@@ -5,8 +5,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    @passport = Passport.create(user_id: @user.id)
     if @user.save
+      session[:user_id] = @user.id
+      @user.passports.create!
       flash[:success] = "Welcome #{@user.name}!"
 
       redirect_to user_path(@user.id)
