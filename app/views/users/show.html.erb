@@ -1,6 +1,8 @@
 <h1><%= "Welcome #{@user.name}!" %><h1>
-
-<%= link_to 'My Passport', user_passport_path(@user) %>
+<div class="my_passport">
+  <%= link_to 'My Passport', user_passport_path(@user) %>
+</div>
+  
 <h2><%= @user.email %><h2>
   <br>
 <a href="<%= edit_user_path %>">

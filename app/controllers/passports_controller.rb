@@ -1,7 +1,7 @@
 class PassportsController < ApplicationController
   def show
     @user = current_user
-    @passport = Passport.find_by(user_id: current_user.id)
+    @passport = Passport.find_by(user_id: @user.id)
     @stamp = params['stamp']
     @stamps = @passport.passport_stamps
     if @stamp
