@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       flash[:success] = "Welcome, #{current_user[:name]}"
 
-      redirect_to user_path(user)
+      redirect_to user_path
     else
       flash[:notice] = "Sorry, those credentials were incorrect. Please try again!"
       render :new
