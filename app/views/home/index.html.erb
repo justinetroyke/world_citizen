@@ -1,46 +1,41 @@
+
+<div class= "hero">
 <center>
-  <h1>World Citizen<h1>
-    <%= image_tag("world.png", size: "280x170", class: "no- responsive no-border") %>
-  <h4>A way to give back to the world through the purchases you already make<h4>
+    <!-- <%= image_tag("world.png", size: "280x170", class: "no- responsive no-border") %> -->
+  <h4 class= "hero-text">A way to give back to the world through the purchases you already make<h4>
 </center>
 
-<center>
-  <div class="row flex-spaces">
-    <div class="col-4 col border-dotted border-thick border-secondary">How
-      you're helping
-    <br>
+<center class="centered-text">
+    <div>
+      <h3> How you're helping </h3>
       <h5>Use World Citizen to find products and busineses that give a portion
         of the profits to charities and non-profits.
       <h5>
+
     </div>
-    <div class="col-4 col border-dotted border-thick border-secondary">How to
-      play
-    <br>
+    <div class="hero-right-column">
+      <h3>How to play</h3>
       <h5>For every eligible product you buy you get a passport stamp based on
         the location of the charity you helped. As you donation locations grow
         in reach so does your citizenship level.
       <h5>
     </div>
-  </div>
 </center>
-<br>
-<br>
 
-<article class="article">
-  <h1 class="article-title"><a href="">Start searching for Stamps near you!</a></h1>
     <center>
+      <h3>Start searching for Stamps near you!</h3>
       <div class="row">
         <div class="search">
           <%= form_tag(stamps_path, method: "get") do %>
-            <%= label_tag :street %>
+            <%= label_tag :street%>
             <%= text_field_tag :street_address %>
             <%= label_tag :city %>
             <%= text_field_tag :city %>
             <%= label_tag :state %>
-            <%= select_tag :state, options_for_select(states) %>
-            <%= submit_tag "Search" %>
+            <%= select_tag :state, options_for_select(states), class: "state-selector"%>
+            <%= submit_tag "Search", class: "search-button" %>
           <% end %>
         </div>
       </div>
     </center>
-</article>
+</div>

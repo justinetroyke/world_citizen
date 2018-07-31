@@ -1,28 +1,43 @@
-<table class="table-alternating">
-  <thead>
-    <tr>
-      <th>Business Name</th>
-      <th>Category</th>
-      <th>Stamp</th>
-      <th>Item</th>
-      <th>Who You're Helping</th>
-      <th>Distance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <div class="stamps">
-      <% if @stamps %>
-        <% @stamps.each do |stamp| %>
+<div class="background-image">
+  <div class="text">
+    <table class="table-alternating">
+      <thead>
+        <tr>
+          <th>Business Name</th>
+          <th>Category</th>
+          <th>Stamp</th>
+          <th>Item</th>
+          <th>Who You're Helping</th>
+          <th>Distance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="stamps">
+          <% if @stamps %>
+            <% @stamps.each do |stamp| %>
+              <tr>
+                <td><%= stamp.business_name %></td>
+                <td><%= stamp.category %></td>
+                <td><%= stamp.stamp %></td>
+                <td><%= link_to stamp.item, stamp_path(stamp.id, stamp: stamp.stamp) %></td>
+                <td><%= stamp.organization %></td>
+                <td><%= stamp.distance %></td>
+              </tr>
+            <% end %>
+          <% else %>
           <tr>
-            <td><%= stamp.business_name %></td>
-            <td><%= stamp.category %></td>
-            <td><%= stamp.stamp %></td>
-            <td><%= link_to stamp.item, stamp_path(stamp.id, stamp: stamp.stamp) %></td>
-            <td><%= stamp.organization %></td>
-            <td><%= stamp.distance %></td>
-          </tr>
-        <% end %>
-      <% end %>
-    </div>
-  </tbody>
-</table>
+            <% @items.each do |item| %>
+              <td><%= item.business_name %></td>
+              <td><%= item.category.name %></td>
+              <td>-</td>
+              <td><%= item.name %></td>
+              <td><%= item.organization %></td>
+              <td>-</td>
+            </tr>
+            <% end %>
+          <% end %>
+        </div>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -5,13 +5,48 @@
  <div id="passport">
    <h3>My Passport<h3>
      <h4>Local Stamps:<h4>
-       <h5>Local Citizenship 0/25<h5>
+       <h5>Local Citizenship <%= "#{@stamps}/25"%><h5>
+         <% if @stamps %>
+           <% @stamps.each do |stamp| %>
+             <% if stamp.stamp.name == "Local" %>
+              <%= image_tag("local.png", size: "50x50", class: "no- responsive no-border") %>
+             <% end %>
+           <% end %>
+         <% end %>
      <h4>District Stamps:<h4>
-       <h5>District Citizenship 0/20<h5>
+       <h5>District Citizenship<h5>
+         <% if @stamps %>
+           <% @stamps.each do |stamp| %>
+             <% if stamp.stamp.name == "District" %>
+              <%= image_tag("district.png", size: "50x50", class: "no- responsive no-border") %>
+             <% end %>
+           <% end %>
+         <% end %>
      <h4>Regional Stamps:<h4>
-       <h5>Regional Citizenship 0/15<h5>
+       <h5>Regional Citizenship<h5>
+         <% if @stamps %>
+           <% @stamps.each do |stamp| %>
+             <% if stamp.stamp.name == "Regional" %>
+              <%= image_tag("regional.png", size: "50x50", class: "no- responsive no-border") %>
+             <% end %>
+           <% end %>
+         <% end %>
      <h4>National Stamps:<h4>
-       <h5>National Citizenship 0/20<h5>
+       <h5>National Citizenship<h5>
+         <% if @stamps %>
+           <% @stamps.each do |stamp| %>
+             <% if stamp.stamp.name == "National" %>
+              <%= image_tag("national.png", size: "50x50", class: "no- responsive no-border") %>
+             <% end %>
+           <% end %>
+         <% end %>
      <h4>International Stamps:<h4>
-       <h5>International Citizenship 0/25<h5>
+       <h5>International Citizenship<h5>
+         <% if @stamps %>
+           <% @stamps.each do |stamp| %>
+             <% if stamp.stamp.name == "International" %>
+              <%= image_tag("international.png", size: "50x50", class: "no- responsive no-border") %>
+             <% end %>
+           <% end %>
+         <% end %>
  </div>
