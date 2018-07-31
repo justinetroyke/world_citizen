@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   end
 
   resources :passports
-  resources :stamps, only: [:index]
+  resources :stamps, only: [:index, :show]
 end

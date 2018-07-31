@@ -13,6 +13,9 @@ class SearchStamp
     @item['name']
   end
 
+  def id
+    @item['id']
+  end
   def organization
     @item['organization']
   end

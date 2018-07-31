@@ -1,0 +1,123 @@
+*{
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.brand-icon{
+  font-size: 1rem;
+  float: left;
+}
+
+#wrapper{
+ max-width: 1440px;
+}
+
+nav {
+  height: 2.2rem;
+  background: linear-gradient(
+  rgba(211, 211, 211, 0.397),
+  rgba(137, 137, 137, 0.377))
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  float: right;
+  padding: .7rem;
+  text-transform: uppercase;
+  font-size: .7rem;
+
+}
+
+nav a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.world-citizen-logo{
+  float: static;
+}
+
+.hero{
+  background:
+  linear-gradient(
+    rgba(0, 6, 17, 0.297),
+    rgba(0, 9, 26, 0.227)),
+    url(https://source.unsplash.com/collection/2435000/1600x900);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.hero-text{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  padding: 8rem 4rem 0 4rem;
+  font-size: 2rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.753);
+}
+
+.centered-text{
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: .5rem;
+  grid-gap: 5rem;
+  padding: 3.5rem;
+}
+
+h3 {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.753);
+}
+
+h5{
+  margin-top: 1rem;
+  font-size: .7rem;
+  text-shadow: 5px 5px 10px black;
+}
+
+center h3{
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+
+.search{
+  color: white;
+  font-size: .8rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.753);
+}
+
+.text{
+  color: white;
+  padding: 1rem;
+  font-size: .8rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.753);
+}
+
+.search-button{
+  padding: .3rem;
+  align-content: bottom;
+  width: 4rem;
+}
+
+.search-button:hover{
+  cursor: pointer;
+  background-color: rgb(0, 183, 255);
+  color: white;
+}
+
+input{
+  height: 1.38rem;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px black;
+}
+
+input:placeholder{
+  margin-left: 2rem;
+}

@@ -5,5 +5,5 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates_presence_of :password, require: true, on: :create
 
-  belongs_to :passport, optional: true
+  has_many :passports
 end

@@ -1,0 +1,12 @@
+<h2><%= @item.name %><h2>
+<div class="stamp">
+  <% if @item %>
+    <li>Business: <%= @item.business_name %></li>
+    <li>address: <%= @item.business_location %></li>
+    <li>Category: <%= @item.category.name %></li>
+    <li>Amount: <%= @item.donation_amount %></li>
+    <li>Goes to: <%= @item.organization %></li>
+    <li>Stamp: <%= @stamp %></li>
+  <% end %>
+  <%= link_to "Item Purchased", user_passport_path(current_user.id, @passport.id, stamp: @stamp) %>
+</div>

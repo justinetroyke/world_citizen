@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_001032) do
   end
 
   create_table "stamps", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

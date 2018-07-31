@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe Stamp, type: :model do
+describe Stamp, name: :model do
   describe 'validations' do
-    it { should validate_presence_of(:type) }
+    it { should validate_presence_of(:name) }
   end
 
   describe 'relationships' do

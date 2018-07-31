@@ -12,7 +12,7 @@ describe 'returns closest stamps to address of user' do
       city = 'Denver'
       state = "CO"
       user = User.create(name: 'Burt Macklin', email: 'stunna@fbi.com', password: '123abc')
-      Passport.create(user_id: user.id)
+      user.passports.create!
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       # As a register user
@@ -45,4 +45,4 @@ describe 'returns closest stamps to address of user' do
   end
 end
 
-# I should see a link to see more results
+# I should see a page links to see more results
