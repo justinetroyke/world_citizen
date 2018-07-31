@@ -35,32 +35,5 @@ RSpec.feature "New account", type: :feature do
         expect(page).to have_link('My Passport')
       end
     end
-
-    context 'log into account' do
-      xit 'should redirect to the users passport' do
-        name = 'Karen Kilgariff'
-        email = 'killgariff@mfm.com'
-        password = 'ssdgm'
-        user = User.create(name: name, email: email, password: password)
-        passport = Passport.create(user_id: user.id)
-
-        visit root_path
-        click_link 'Log In'
-
-        expect(current_path).to eq(login_path)
-
-        fill_in :email, with: email
-        fill_in :password, with: password
-
-        click_on 'Log in'
-
-        expect(current_path).to eq(user_path(user))
-        expect(page).to have_content("Log Out")
-
-        click_link "Log Out"
-
-        expect(current_path).to eq(root_path)
-      end
-    end
   end
 end
