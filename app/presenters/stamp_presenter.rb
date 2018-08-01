@@ -4,7 +4,7 @@ class StampPresenter
 
   def initialize(user_location)
     @user_location = user_location
-    @items = Items.all
+    @items = Item.all
   end
 
   def stamp(item)
