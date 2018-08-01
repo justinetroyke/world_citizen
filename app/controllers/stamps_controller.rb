@@ -2,8 +2,7 @@ class StampsController < ApplicationController
   def index
     if params['street_address']
       address = "#{params['street_address'].gsub(' ','+')}+#{params['city']}+#{params['state']}"
-      @items = Item.all
-      @stamps = StampPresenter.new(address, @items).stamps
+      @stamps = StampPresenter.new(address).stamps
     else
       @items = Item.all
     end

@@ -2,9 +2,9 @@ class StampPresenter
   attr_reader :user_location,
               :items
 
-  def initialize(user_location, items)
+  def initialize(user_location)
     @user_location = user_location
-    @items = items
+    @items = Items.all
   end
 
   def stamp(item)
