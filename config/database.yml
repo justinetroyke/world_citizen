@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: world_citizen_production
-  username: world_citizen
-  password: <%= ENV['WORLD_CITIZEN_DATABASE_PASSWORD'] %>
+  database: world_citizen_development
