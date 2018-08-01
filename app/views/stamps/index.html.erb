@@ -1,9 +1,18 @@
 <div class="background-image">
-  <div class="row">
-    <div class="search">
-      <%= link_to "Create New Item", new_item_path %>
-    </div>
-  </div>
+  <a><%= link_to "Create New Item", new_item_path %></a>
+      <div class="row">
+        <div class="stamp-search">
+          <%= form_tag(stamps_path, method: "get") do %>
+            <%= label_tag :street%>
+            <%= text_field_tag :street_address %>
+            <%= label_tag :city %>
+            <%= text_field_tag :city %>
+            <%= label_tag :state %>
+            <%= select_tag :state, options_for_select(states), class: "state-selector"%>
+            <%= submit_tag "Search", class: "search-button" %>
+          <% end %>
+        </div>
+      </div>
   <div class="text">
     <table class="table-alternating">
       <thead>
@@ -35,7 +44,7 @@
               <td><%= item.business_name %></td>
               <td><%= item.category.name %></td>
               <td>-</td>
-              <td><%= item.name %></td>
+              <td><%= link_to item.name, item_path(item.id) %></td>
               <td><%= item.organization %></td>
               <td>-</td>
             </tr>

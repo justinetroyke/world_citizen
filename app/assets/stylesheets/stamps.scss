@@ -1,0 +1,33 @@
+.text{
+  color: white;
+  padding: 1rem;
+  font-size: .8rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.753);
+}
+
+.stamp-search{
+  color: white;
+  float: right;
+  font-size: 1rem;
+  padding: 1rem;
+  padding-bottom: 3rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.753);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  float: left;
+  padding-left: .5;
+  padding: 1rem;
+  padding-bottom: 3rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+
+}
+
+a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 800;
+}

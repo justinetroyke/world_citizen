@@ -84,7 +84,7 @@ center h3{
 
 .search{
   color: white;
-  font-size: .8rem;
+  font-size: 1rem;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.753);
 }
 
@@ -118,13 +118,30 @@ input:placeholder{
 }
 
 .search-section {
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 3rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.753);
 }
 
 .search-section h3{
   color: white;
   margin-bottom: 1rem;
+}
+
+.intro{
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.753);
+  padding: 3rem;
+  font-size: 1.1rem;
+}
+
+.intro-title{
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.753);
+  padding: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
