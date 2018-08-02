@@ -9,22 +9,22 @@
   <div>
       <%= image_tag("local.png", class: "stamp-image") %>
       <h6>Local Citizenship<h6>
-      <h6><%= "#{@stamps.count}/25 stamps"%><h6>
+      <h6 id="local"><%= "#{@stamps[:local]}/25 stamps"%><h6>
   </div>
   <div>
     <%= image_tag("district.png", class: "stamp-image") %>
     <h6>District Citizenship<h6>
-    <h6><%= "#{@stamps.count}/20 stamps"%><h6>
+    <h6 id="district"><%= "#{@stamps[:district]}/20 stamps"%><h6>
   </div>
   <div class="">
     <%= image_tag("regional.png", class: "stamp-image") %>
     <h6>Regional Citizenship<h6>
-    <h6><%= "#{@stamps.count}/15 stamps"%><h6>
+    <h6 id="regional"><%= "#{@stamps[:regional]}/15 stamps"%><h6>
   </div>
   <div class="">
     <%= image_tag("national.png", class: "stamp-image") %>
     <h6>National Citizenship<h6>
-    <h6><%= "#{@stamps.count}/20 stamps"%><h6>
+    <h6 id="national"><%= "#{@stamps[:national]}/20 stamps"%><h6>
   </div>
 </div>
 
@@ -33,6 +33,6 @@
   <div class="so-international-text">
     <%= image_tag("international.png", class: "international-stamp-image") %>
     <h6>International Citizenship<h6>
-    <h6><%= "#{@stamps.count}/25 stamps"%><h6>
+    <h6 id="international"><%= "#{@stamps[:international]}/25 stamps"%><h6>
   </div>
 </div>
