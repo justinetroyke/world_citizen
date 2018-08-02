@@ -1,7 +1,7 @@
 class StampsController < ApplicationController
   def index
     if params['street_address']
-      address = "#{params['street_address'].gsub(' ','+')}+#{params['city']}+#{params['state']}"
+      address = ItemGeocoderService.new.user_geocode(params['street_address'])
       @stamps = StampPresenter.new(address).stamps
     else
       @items = Item.all

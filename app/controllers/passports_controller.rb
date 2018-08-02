@@ -14,6 +14,6 @@ class PassportsController < ApplicationController
 
 private
   def passport_params
-    params.require(:passport).permit(:user_id)
+    params.require(:passport).permit(:user_id, :passport_id)
   end
 end
