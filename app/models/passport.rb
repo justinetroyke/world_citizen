@@ -5,7 +5,11 @@ class Passport < ApplicationRecord
   has_many :stamps, through: :passport_stamps
 
   def stamp_amounts(passport)
-    find_amounts(passport.passport_stamps).first
+    if passport.passport_stamps.first.nil?
+      zero_amounts
+    else
+      find_amounts(passport.passport_stamps).first
+    end
   end
 private
 
@@ -33,5 +37,14 @@ private
       end
       amounts
     end
+  end
+
+  def zero_amounts
+    { local: 0,
+      district: 0,
+      regional: 0,
+      national: 0,
+      international: 0,
+        }
   end
 end
