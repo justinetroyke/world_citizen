@@ -1,63 +1,38 @@
 <div class="background-image">
-  <div class="passport-text">
-  <center>
-    <h1>MY JOURNEY TO WORLD CITIZENSHIP<h1>
-  </center>
-  <div class="passport-left-column">
-    <h2>My Passport<h2>
+  <div class="passport-header">
+    <h6>MY JOURNEY TO WORLD CITIZENSHIP<h6>
+    <h6><%= "#{@user.name} is currently a citizen in progress!" %><h6>
+    <h6>CITIZENSHIPS<h6>
   </div>
-  <center class="passport-centered-text">
-     <div id="passport">
-        <h4>Local Citizenship<h4>
-        <h4><%= "#{@stamps.count}/25 stamps"%><h4>
-           <% if @stamps %>
-            <% @stamps.each do |stamp| %>
-              <% if stamp.stamp.name == "Local" %>
-                <%= image_tag("local.png", class: "stamp-image") %>
-              <% end %>
-            <% end %>
-          <% end %>
-         <h4>District Citizenship<h4>
-         <h4><%= "#{@stamps.count}/20 stamps"%><h4>
-             <% if @stamps %>
-               <% @stamps.each do |stamp| %>
-                 <% if stamp.stamp.name == "District" %>
-                  <%= image_tag("district.png", class: "stamp-image") %>
-                 <% end %>
-               <% end %>
-             <% end %>
-         <h4>Regional Citizenship<h4>
-         <h4><%= "#{@stamps.count}/15 stamps"%><h4>
-             <% if @stamps %>
-               <% @stamps.each do |stamp| %>
-                 <% if stamp.stamp.name == "Regional" %>
-                  <%= image_tag("regional.png", class: "stamp-image") %>
-                 <% end %>
-               <% end %>
-             <% end %>
-         <h4>National Citizenship<h4>
-         <h4><%= "#{@stamps.count}/20 stamps"%><h4>
-             <% if @stamps %>
-               <% @stamps.each do |stamp| %>
-                 <% if stamp.stamp.name == "National" %>
-                  <%= image_tag("national.png", class: "stamp-image") %>
-                 <% end %>
-               <% end %>
-             <% end %>
-         <h4>International Citizenship<h4>
-         <h4><%= "#{@stamps.count}/25 stamps"%><h4>
-             <% if @stamps %>
-               <% @stamps.each do |stamp| %>
-                 <% if stamp.stamp.name == "International" %>
-                  <%= image_tag("international.png", class: "stamp-image") %>
-                 <% end %>
-               <% end %>
-             <% end %>
-            </div>
-      <div class="passport-right-column">
-        <h2><%= "#{@user.name} is currently a citizen in progress!" %><h2>
-          <%= image_tag("white-passport.png", class: "passport-image") %>
-        </div>
-    </div>
+
+<div class="columns">
+  <div>
+      <%= image_tag("local.png", class: "stamp-image") %>
+      <h6>Local Citizenship<h6>
+      <h6><%= "#{@stamps.count}/25 stamps"%><h6>
   </div>
- </div>
+  <div>
+    <%= image_tag("district.png", class: "stamp-image") %>
+    <h6>District Citizenship<h6>
+    <h6><%= "#{@stamps.count}/20 stamps"%><h6>
+  </div>
+  <div class="">
+    <%= image_tag("regional.png", class: "stamp-image") %>
+    <h6>Regional Citizenship<h6>
+    <h6><%= "#{@stamps.count}/15 stamps"%><h6>
+  </div>
+  <div class="">
+    <%= image_tag("national.png", class: "stamp-image") %>
+    <h6>National Citizenship<h6>
+    <h6><%= "#{@stamps.count}/20 stamps"%><h6>
+  </div>
+</div>
+
+
+<div class="so-international">
+  <div class="so-international-text">
+    <%= image_tag("international.png", class: "international-stamp-image") %>
+    <h6>International Citizenship<h6>
+    <h6><%= "#{@stamps.count}/25 stamps"%><h6>
+  </div>
+</div>
