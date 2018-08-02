@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
-  # before_save :format_org_location
+  before_save :format_org_location
+  before_save :lat_lng
 
   validates_presence_of :business_name,
                         :business_location,
@@ -17,5 +18,10 @@ private
 
   def google_address(location)
     location.sub(' ','+').gsub(',','+').sub(' ','+').gsub(' ','')
+  end
+
+  def lat_lng
+    ItemGeocoderService.new(self).update
+    ItemGeocoderService.new(self).update_org
   end
 end
