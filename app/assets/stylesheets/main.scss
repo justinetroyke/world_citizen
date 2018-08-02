@@ -2,7 +2,7 @@
   background:
     url(asset-path('greyzz.png'));
   background-repeat: repeat;
-  height: 150vh;
+  // height: 150vh;
 }
 
 .main-text{
@@ -31,4 +31,13 @@ a:hover{
 .main-text h3{
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.503);
   padding-bottom: 1rem;
+}
+
+.camp-title{
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.completed{
+  padding-bottom: 1.5rem;
 }
