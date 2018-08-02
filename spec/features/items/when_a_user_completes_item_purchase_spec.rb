@@ -56,6 +56,21 @@ describe 'rewards stamp to passport when item purchased' do
       # I should see a second message that says
       # "Great job giving back! In a mood to give more? Click HERE to collect double the stamps for your passport by directly sponsoring a DonorChose campaign!"
       expect(page).to have_link('here')
+      within("#local") do
+        expect(page).to have_content("1/25 stamps")
+      end
+      within("#district") do
+        expect(page).to have_content("0/20 stamps")
+      end
+      within("#regional") do
+        expect(page).to have_content("0/15 stamps")
+      end
+      within("#national") do
+        expect(page).to have_content("0/20 stamps")
+      end
+      within("#international") do
+        expect(page).to have_content("0/25 stamps")
+      end
     end
   end
 end
