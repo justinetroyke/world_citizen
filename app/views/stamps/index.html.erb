@@ -1,7 +1,10 @@
 <div class="background-image">
-  <a><%= link_to "Create New Item", new_item_path %></a>
-      <div class="row">
-        <div class="stamp-search">
+  <div class="main-text">
+    <div class="spacing">
+      <a><%= link_to "Create New Item", new_item_path %></a>
+    </div>
+      <div class="spacing">
+        <div class="row">
           <%= form_tag(stamps_path, method: "get") do %>
             <%= label_tag :street%>
             <%= text_field_tag :street_address %>
@@ -13,7 +16,6 @@
           <% end %>
         </div>
       </div>
-  <div class="text">
     <table class="table-alternating">
       <thead>
         <tr>

@@ -1,11 +1,23 @@
 <div class="background-image">
-  <div class="text">
-      <%= @item.business_name %>
-      <%= @item.business_location %>
-      <%= @item.name %>
-      <%= @item.donation_amount %>
-      <%= @item.organization %>
-      <%= @item.organization_location %>
-      <%= @item.category.name %>
+  <div class="main-text">
+    <div class="show-columns">
+      <div class="">
+        <h2 class="show-header">Where to Purchase</h2>
+        <ul>
+          <li><h6><%= @item.business_name %></h6></li>
+          <li><%= @item.business_location %></li>
+          <li>Donation amount: <%= @item.donation_amount %></li>
+          <li><h6><%= @item.name %><h6></li>
+        </ul>
+      </div>
+      <div class="">
+        <h2 class="show-header">Who You're Helping</h2>
+        <ul>
+          <li><h6 class="org"><%= @item.organization %></h6></li>
+          <li><%= @item.organization_location %></li>
+          <li>Category: <%= @item.category.name %></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

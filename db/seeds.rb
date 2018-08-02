@@ -14,7 +14,7 @@ Stamp.create!(name: 'International')
 fb = Category.create!(name: 'F&B')
 product = Category.create!(name: 'Product')
 
-fb.items.create!(business_name: "BJ's Restaurant & Brewhouse", business_location: '10446 Town Center Dr, Westminster, CO 80021', name: 'Pizookie', donation_amount: 'potion', organization: 'Cystic Fibrosis Foundation', organization_location: '4550 Montgomery Ave., Bethesda, MD 20814')
+fb.items.create!(business_name: "BJ's Restaurant & Brewhouse", business_location: '10446 Town Center Dr, Westminster, CO 80021', name: 'Pizookie', donation_amount: 'portion of the proceeds', organization: 'Cystic Fibrosis Foundation', organization_location: '4550 Montgomery Ave., Bethesda, MD 20814')
 product.items.create!(business_name: 'SameDay Office Supply', business_location: '7076 S Alton Way, Centennial, CO 80112', name: 'printer cartridge', donation_amount: 'portion of recycled cartridge', organization: 'Denver Rescue Mission', organization_location: '6100 Smith Road, Denver, CO, 80216')
 product.items.create!(business_name: 'KITTLE REAL ESTATE', business_location: '300 S Howes St, Fort Collins, CO 80521', name: 'real estate', donation_amount: '$9,000.00', organization: 'Sell a Home, Save a Child', organization_location: '300 S Howes St, Fort Collins, CO 80521')
 product.items.create!(business_name: 'McDonald Independent PreOwned Subaru',  business_location: '4550 S Broadway, Englewood, CO 80113', name: 'pre-owned car', donation_amount: '$50', organization: 'Denver Rescue Mission', organization_location: '6100 Smith Road, Denver, CO, 80216')

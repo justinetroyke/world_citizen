@@ -1,31 +1,74 @@
-.background-image{
-  background:
-    url(asset-path('black_mamba.png'));
-  background-repeat: repeat;
+// .text{
+//   color: white;
+//   padding: 1rem;
+//   font-size: .8rem;
+//   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.753);
+// }
+//
+// a {
+//   color: white;
+//   text-decoration: none;
+//   float: left;
+//   padding-left: .5;
+//   padding: 1rem;
+//   padding-bottom: 3rem;
+//   text-transform: uppercase;
+//   font-size: 1rem;
+//
+// }
+//
+// a:hover{
+//   text-decoration: underline;
+//   cursor: pointer;
+//   font-weight: 800;
+// }
+
+.main-text .show-columns{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
 }
 
-
-.text{
-  color: white;
-  padding: 1rem;
-  font-size: .8rem;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.753);
+.show-columns h6{
+  font-size: 1.5rem;
 }
 
-a {
+.show-header{
+  text-align: center;
+  padding-top: 5rem;
+  color: #4452ae;
+  padding-bottom: 2rem;
+  font-size: 3rem;
+  font-family: 'Lobster Two', cursive;
+}
+
+.org h6{
+  font-weight: 400;
+  padding-left: none;
+}
+
+ul{
+  list-style-type: none;
+}
+
+li{
+  padding: .4rem 0;
+}
+
+.complete-button{
+  border: 1px solid #4452ae;
+  background-color: #4452ae;
+  border-radius: 25px;
+
+}
+
+.complete-button:hover{
+  filter:brightness(130%);
+  cursor: pointer;
+}
+
+.complete-button a{
   color: white;
   text-decoration: none;
-  float: left;
-  padding-left: .5;
-  padding: 1rem;
-  padding-bottom: 3rem;
-  text-transform: uppercase;
-  font-size: 1rem;
 
-}
-
-a:hover{
-  text-decoration: underline;
-  cursor: pointer;
-  font-weight: 800;
 }

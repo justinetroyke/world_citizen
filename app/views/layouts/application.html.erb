@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
 </head>
 
   <body>
@@ -16,7 +17,6 @@
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, class: name %>
       <% end %>
-      <div id="wrapper" class="sm-12 col">
         <%= yield %>
     </div>
   </body>
