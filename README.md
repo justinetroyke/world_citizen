@@ -3,6 +3,7 @@
 __Prerequisites__
 
 This project assumes you have installed:
+
 Ruby
 Rails
 Homebrew
@@ -44,4 +45,5 @@ A way to encourage companies to build charitable giving into their business mode
 * As a user collects stamps in their passport they gain levels of citizenship until they reach World Citizenship.
 
 __Authors__
+
 Justine Troyke
