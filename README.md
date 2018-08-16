@@ -1,4 +1,4 @@
-[![Waffle.io - Issues in progress](https://waffle.io/justinetroyke/world_citizen.svg?columns=all(https://waffle.io/justinetroyke/world_citizen)
+[![Waffle.io - Issues in progress](https://waffle.io/justinetroyke/world_citizen.svg?columns=all](http://waffle.io/justinetroyke/world_citizen)
 
 __Prerequisites__
 
