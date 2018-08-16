@@ -1,24 +1,43 @@
-# README
+[![Waffle.io - Issues in progress](https://waffle.io/justinetroyke/world_citizen.svg?columns=all(https://waffle.io/justinetroyke/world_citizen)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+__Prerequisites__
+This project assumes you have installed:
+Ruby
+Rails
+Homebrew
+Bundle
+Faraday
+Figaro
 
-Things you may want to cover:
+__Quick Start:__
 
-* Ruby version
+run in the comand line
+```
+bundle install
+bundle update
+rake db:{drop,create,migrate,seed}
+rails s
+```
 
-* System dependencies
+__Heroku Link__
+https://world-citizen.herokuapp.com/
 
-* Configuration
+__Testing__
+To run the full rspec testing suite, run
+```rspec```
+from the command line
 
-* Database creation
+__Purpose of the app__
+Gamification of giving back through the purchases you are already making.
 
-* Database initialization
+A way to encourage companies to build charitable giving into their business model as well as encourage consumers to seek out such products.
 
-* How to run the test suite
+# Through World Citizen a user has a passport.
+# They can search for products that donates a portion of the proceeds to a charity or non-profit.
+# For that product a passport stamp is generated.
+# The stamp level will be calculated based on the distance from the user’s location to location of where the charity or non-profit helps people.
+# Once they hit complete purchase of the product they are awarded that passport stamp.
+# As a user collects stamps in their passport they gain levels of citizenship until they reach World Citizenship.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+__Authors__
+Justine Troyke
