@@ -4,12 +4,12 @@ __Prerequisites__
 
 This project assumes you have installed:
 
-Ruby
-Rails
-Homebrew
-Bundle
-Faraday
-Figaro
+* Ruby
+* Rails
+* Homebrew
+* Bundle
+* Faraday
+* Figaro
 
 __Quick Start:__
 
