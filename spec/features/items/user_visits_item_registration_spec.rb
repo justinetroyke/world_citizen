@@ -10,7 +10,7 @@ RSpec.describe 'Registered User creates a new item' do
       name = 'Triple Decker'
       amt = '$10'
       org = 'Less Burgers'
-      org_address = '4550 Montgomery Ave., Suite 1100 N, Bethesda, MD 20814'
+      org_address = '4550 Montgomery Ave., Bethesda, MD 20814'
 
       user = User.create(name: 'Burt Macklin', email: 'stunna@fbi.com', password: '123abc')
       user.passports.create!

@@ -25,7 +25,7 @@ class StampPresenter
   end
 
   def item_distance(item)
-    destination = {lat: item.org_lat, lng: item.org_lng}
+    destination = {lat: item.business_lat, lng: item.business_lng}
     GoogleDistanceService.new(@user_location, destination).get_distance
   end
 
