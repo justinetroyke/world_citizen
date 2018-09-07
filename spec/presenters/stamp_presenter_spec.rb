@@ -2,10 +2,7 @@ require "rails_helper"
 
 describe "returns stamps with distance to item and stamp level" do
   it 'return stamp objects' do
-    street = '1801 Chestnut Pl'
-    city = 'Denver'
-    state = 'CO'
-    address = {street: street, city: city, state: state}
+    address = "1801 Chestnut Pl, Denver CO 80202"
     fb = Category.create!(name: 'F&B')
     product = Category.create!(name: 'Product')
     fb.items.create!(business_name: 'Luna Gourmet Coffee & Tea Company', business_location: '7295 Washington St, Denver, CO 80229', name: 'Surfers for Autism Coffee', donation_amount: '$1', organization: 'Surfers for Autism', organization_location: '7491 N. Federal Hwy, Boca Raton FL 33487')
@@ -23,6 +20,6 @@ describe "returns stamps with distance to item and stamp level" do
     expect(stamp.stamp).to eq('Local')
     expect(stamp.item).to eq('printer cartridge')
     expect(stamp.organization).to eq('Denver Rescue Mission')
-    expect(stamp.item_distance).to eq('16.1 mi')
+    expect(stamp.item_distance).to eq('16.2 mi')
   end
 end
