@@ -13,4 +13,11 @@ Rails.application.routes.draw do
 
   resources :passports
   resources :stamps, only: [:index, :show]
+  namespace :api do
+    namespace :v1 do
+      namespace :stamps do
+         get '/all', :to => 'stamps#index'
+      end
+    end
+  end
 end
