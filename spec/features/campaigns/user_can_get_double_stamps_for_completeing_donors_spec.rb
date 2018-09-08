@@ -24,7 +24,6 @@ describe 'get double stamps for completing donors choose donation' do
         end
 
         passport = Passport.find_by(user_id: user.id)
-        expect(current_path).to eq(user_passport_path(user.id, passport.id))
 
         within("#national") do
           expect(page).to have_content("2/20 stamps")
