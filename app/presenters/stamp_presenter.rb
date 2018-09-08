@@ -1,6 +1,7 @@
 class StampPresenter
   attr_reader :user_location,
-              :items
+              :items,
+              :formatted_user_location
 
   def initialize(user_location)
     @user_location = user_location
@@ -9,7 +10,7 @@ class StampPresenter
 
   def stamp(item)
     destination = {lat: item.org_lat, lng: item.org_lng}
-    response = GoogleDistanceService.new(format_user_location, destination).get_distance
+    response = GoogleDistanceService.new(@user_location, destination).get_distance
     org_distance = response.split.first.gsub(',', '').to_i
     if org_distance < 25
       item['stamp_id'] = 0
@@ -26,7 +27,7 @@ class StampPresenter
 
   def item_distance(item)
     destination = {lat: item.business_lat, lng: item.business_lng}
-    GoogleDistanceService.new(format_user_location, destination).get_distance
+    GoogleDistanceService.new(@user_location, destination).get_distance
   end
 
   def stamps
@@ -35,9 +36,5 @@ class StampPresenter
       distance = item_distance(item)
       SearchStamp.new(item, stamp, distance)
     end
-  end
-
-  def format_user_location
-    LatLongService.new(@user_location).coordinates
   end
 end
