@@ -12,6 +12,7 @@ class StampsController < ApplicationController
     @passport = Passport.find_by(user_id: current_user.id)
     @stamp = params['stamp']
   end
+  
 private
   def address_params
     params['street_address']
