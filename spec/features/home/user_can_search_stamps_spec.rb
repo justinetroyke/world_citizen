@@ -38,7 +38,7 @@ describe 'returns closest stamps to address of user' do
         expect(page).to have_content('Local')
         expect(page).to have_content('Surfers for Autism Coffee')
         expect(page).to have_content('Surfers for Autism')
-        expect(page).to have_content('4.9 mi')
+        expect(page).to have_content('5.0 mi')
         # And I should see the business name, category, stamp, item, charity org and distance to item business address for each of the 10 results
       end
     end

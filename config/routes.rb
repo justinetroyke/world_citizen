@@ -18,6 +18,9 @@ Rails.application.routes.draw do
       namespace :stamps do
          get '/all', :to => 'stamps#index'
       end
+      namespace :login do
+        post '', :to => 'sessions#create'
+      end
     end
   end
 end
