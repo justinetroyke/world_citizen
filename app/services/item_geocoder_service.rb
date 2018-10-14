@@ -15,7 +15,10 @@ class ItemGeocoderService
   end
 
   def user_geocode(user_address)
-    LatLongService.new(user_address).coordinates
+    coordinates = LatLongService.new(user_address).coordinates
+    lat = coordinates[:lat].to_s
+    lng = coordinates[:lng].to_s
+    {:lat=> lat, :lng=> lng}
   end
 
 private

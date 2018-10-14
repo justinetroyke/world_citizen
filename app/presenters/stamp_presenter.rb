@@ -1,6 +1,7 @@
 class StampPresenter
   attr_reader :user_location,
-              :items
+              :items,
+              :formatted_user_location
 
   def initialize(user_location)
     @user_location = user_location
