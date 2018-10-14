@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_14_203540) do
+ActiveRecord::Schema.define(version: 2018_10_14_205955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,15 @@ ActiveRecord::Schema.define(version: 2018_10_14_203540) do
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
+  create_table "organizations", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "lat"
+    t.string "lng"
+    t.bigint "item_id"
+    t.index ["item_id"], name: "index_organizations_on_item_id"
+  end
+
   create_table "passport_stamps", force: :cascade do |t|
     t.bigint "passport_id"
     t.bigint "stamp_id"
@@ -83,6 +92,7 @@ ActiveRecord::Schema.define(version: 2018_10_14_203540) do
   add_foreign_key "items", "categories"
   add_foreign_key "items", "stamps"
   add_foreign_key "locations", "users"
+  add_foreign_key "organizations", "items"
   add_foreign_key "passport_stamps", "passports"
   add_foreign_key "passport_stamps", "stamps"
   add_foreign_key "passports", "users"
