@@ -9,6 +9,6 @@ describe Business, type: :model do
   end
 
   describe 'relationships' do
-    it { should have_many(:item) }
+    it { should belong_to(:item) }
   end
 end

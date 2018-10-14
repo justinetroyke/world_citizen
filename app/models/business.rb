@@ -5,5 +5,5 @@ class Business < ApplicationRecord
                         :lat,
                         :lng
 
-  has_many :item
+  belongs_to :item
 end

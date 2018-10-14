@@ -31,16 +31,12 @@ ActiveRecord::Schema.define(version: 2018_10_14_203540) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.string "business_name"
     t.string "name"
     t.string "donation_amount"
     t.string "organization"
     t.string "organization_location"
     t.bigint "stamp_id"
     t.bigint "category_id"
-    t.string "business_location"
-    t.string "business_lat"
-    t.string "business_lng"
     t.string "org_lat"
     t.string "org_lng"
     t.index ["category_id"], name: "index_items_on_category_id"
