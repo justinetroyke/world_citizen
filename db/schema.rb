@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_14_205955) do
+ActiveRecord::Schema.define(version: 2018_10_15_003825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,13 +33,13 @@ ActiveRecord::Schema.define(version: 2018_10_14_205955) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "donation_amount"
-    t.string "organization"
-    t.string "organization_location"
     t.bigint "stamp_id"
     t.bigint "category_id"
-    t.string "org_lat"
-    t.string "org_lng"
+    t.bigint "business_id"
+    t.bigint "organization_id"
+    t.index ["business_id"], name: "index_items_on_business_id"
     t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["organization_id"], name: "index_items_on_organization_id"
     t.index ["stamp_id"], name: "index_items_on_stamp_id"
   end
 
@@ -89,7 +89,9 @@ ActiveRecord::Schema.define(version: 2018_10_14_205955) do
   end
 
   add_foreign_key "businesses", "items"
+  add_foreign_key "items", "businesses"
   add_foreign_key "items", "categories"
+  add_foreign_key "items", "organizations"
   add_foreign_key "items", "stamps"
   add_foreign_key "locations", "users"
   add_foreign_key "organizations", "items"

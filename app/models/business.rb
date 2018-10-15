@@ -1,9 +1,6 @@
 class Business < ApplicationRecord
-
   validates_presence_of :name,
-                        :location,
-                        :lat,
-                        :lng
+                        :location
 
-  belongs_to :item
+  has_many :items
 end

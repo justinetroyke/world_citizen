@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
     if @item.save
       flash[:success] = "#{@item.name} added!"
 
-      redirect_to item_path(@item.id)
+      redirect_to new_business_path
     else
       flash[:error] = "Please complete all fields"
 
