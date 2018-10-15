@@ -4,11 +4,14 @@ class BusinessesController < ApplicationController
   end
 
   def create
+    id = Item.last.id
+    item = Item.find_by(id: id)
     @business = Business.create!(business_params)
     if @business.save
-      flash[:success] = "#{@business.name} has been created!"
-
-      # redirect_to new_organiztion_path
+      item[:business_id] = @business.id
+      flash[:success] = "#{@business.name} has been added to #{item.name}!"
+      
+      redirect_to new_item_path
     else
       flash[:error] = "Please complete all fields"
 

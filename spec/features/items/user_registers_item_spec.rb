@@ -21,24 +21,26 @@ RSpec.describe 'Registered User creates a new item' do
 
       click_on(add)
 
+      expect(current_path).to eq(new_item_path)
+      fill_in 'item[name]', with: name
+      fill_in 'item[donation_amount]', with: amt
+      select(category, from: 'item_category')
+      click_on 'Create New Item'
+      item = Item.last
+      expect(item.name).to eq(name)
+      expect(item.donation_amount).to eq(amt)
+
       expect(current_path).to eq(new_business_path)
 
       fill_in 'business[name]', with: biz
       fill_in 'business[location]', with: biz_loc
       click_on 'Add New Business'
-      business = Business.last 
+      business = Business.last
       expect(business.name).to eq(biz)
       expect(business.location).to eq(biz_loc)
-
-      # expect(current_path).to eq(new_item_path)
-      # fill_in 'item[name]', with: name
-      # fill_in 'item[donation_amount]', with: amt
-      # select(category, from: 'item_category')
-      # click_on 'Create New Item'
-      # item = Item.last
-      # expect(item.name).to eq(name)
-      # expect(item.donation_amount).to eq(amt)
-      # expect(item.category.name).to eq(category)
+      binding.pry
+      # expect(updated_item.category.name).to eq(category)
+      # expect(updated_item.business_id).to eq(business.id)
 
       # fill_in 'item[organization]', with: org
       # fill_in 'item[organization_location]', with: org_address

@@ -5,7 +5,6 @@ class CreateBusinesses < ActiveRecord::Migration[5.2]
       t.string :location
       t.string :lat
       t.string :lng
-      t.references :item, foreign_key: true
     end
   end
 end

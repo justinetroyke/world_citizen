@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_15_003825) do
+ActiveRecord::Schema.define(version: 2018_10_15_014634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,6 @@ ActiveRecord::Schema.define(version: 2018_10_15_003825) do
     t.string "location"
     t.string "lat"
     t.string "lng"
-    t.bigint "item_id"
-    t.index ["item_id"], name: "index_businesses_on_item_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -36,10 +34,8 @@ ActiveRecord::Schema.define(version: 2018_10_15_003825) do
     t.bigint "stamp_id"
     t.bigint "category_id"
     t.bigint "business_id"
-    t.bigint "organization_id"
     t.index ["business_id"], name: "index_items_on_business_id"
     t.index ["category_id"], name: "index_items_on_category_id"
-    t.index ["organization_id"], name: "index_items_on_organization_id"
     t.index ["stamp_id"], name: "index_items_on_stamp_id"
   end
 
@@ -56,8 +52,6 @@ ActiveRecord::Schema.define(version: 2018_10_15_003825) do
     t.string "location"
     t.string "lat"
     t.string "lng"
-    t.bigint "item_id"
-    t.index ["item_id"], name: "index_organizations_on_item_id"
   end
 
   create_table "passport_stamps", force: :cascade do |t|
@@ -88,13 +82,10 @@ ActiveRecord::Schema.define(version: 2018_10_15_003825) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "businesses", "items"
   add_foreign_key "items", "businesses"
   add_foreign_key "items", "categories"
-  add_foreign_key "items", "organizations"
   add_foreign_key "items", "stamps"
   add_foreign_key "locations", "users"
-  add_foreign_key "organizations", "items"
   add_foreign_key "passport_stamps", "passports"
   add_foreign_key "passport_stamps", "stamps"
   add_foreign_key "passports", "users"
