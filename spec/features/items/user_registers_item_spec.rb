@@ -38,7 +38,7 @@ RSpec.describe 'Registered User creates a new item' do
       business = Business.last
       expect(business.name).to eq(biz)
       expect(business.location).to eq(biz_loc)
-      binding.pry
+
       # expect(updated_item.category.name).to eq(category)
       # expect(updated_item.business_id).to eq(business.id)
 

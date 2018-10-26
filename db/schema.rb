@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_15_014634) do
+ActiveRecord::Schema.define(version: 2018_10_26_030608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "business_items", force: :cascade do |t|
+    t.bigint "item_id"
+    t.bigint "business_id"
+    t.index ["business_id"], name: "index_business_items_on_business_id"
+    t.index ["item_id"], name: "index_business_items_on_item_id"
+  end
 
   create_table "businesses", force: :cascade do |t|
     t.string "name"
@@ -33,8 +40,6 @@ ActiveRecord::Schema.define(version: 2018_10_15_014634) do
     t.string "donation_amount"
     t.bigint "stamp_id"
     t.bigint "category_id"
-    t.bigint "business_id"
-    t.index ["business_id"], name: "index_items_on_business_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["stamp_id"], name: "index_items_on_stamp_id"
   end
@@ -45,6 +50,13 @@ ActiveRecord::Schema.define(version: 2018_10_15_014634) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_locations_on_user_id"
+  end
+
+  create_table "organization_items", force: :cascade do |t|
+    t.bigint "item_id"
+    t.bigint "organization_id"
+    t.index ["item_id"], name: "index_organization_items_on_item_id"
+    t.index ["organization_id"], name: "index_organization_items_on_organization_id"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -82,10 +94,13 @@ ActiveRecord::Schema.define(version: 2018_10_15_014634) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "items", "businesses"
+  add_foreign_key "business_items", "businesses"
+  add_foreign_key "business_items", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "stamps"
   add_foreign_key "locations", "users"
+  add_foreign_key "organization_items", "items"
+  add_foreign_key "organization_items", "organizations"
   add_foreign_key "passport_stamps", "passports"
   add_foreign_key "passport_stamps", "stamps"
   add_foreign_key "passports", "users"

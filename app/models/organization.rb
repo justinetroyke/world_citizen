@@ -4,5 +4,6 @@ class Organization < ApplicationRecord
                         :lat,
                         :lng
 
-  belongs_to :item
+  has_many :organization_items
+  has_many :items, through: :organization_items
 end

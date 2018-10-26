@@ -9,6 +9,7 @@ describe Organization, type: :model do
   end
 
   describe 'relationships' do
-    it { should belong_to(:item) }
+    it { should have_many(:items) }
+    it { should have_many(:organization_items) }
   end
 end
