@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_02_205537) do
+ActiveRecord::Schema.define(version: 2019_01_06_004601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "businesses", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "latitude"
+    t.string "longitude"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -22,28 +29,23 @@ ActiveRecord::Schema.define(version: 2018_08_02_205537) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.string "business_name"
     t.string "name"
     t.string "donation_amount"
-    t.string "organization"
-    t.string "organization_location"
     t.bigint "stamp_id"
     t.bigint "category_id"
-    t.string "business_location"
-    t.string "business_lat"
-    t.string "business_lng"
-    t.string "org_lat"
-    t.string "org_lng"
+    t.bigint "business_id"
+    t.bigint "organization_id"
+    t.index ["business_id"], name: "index_items_on_business_id"
     t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["organization_id"], name: "index_items_on_organization_id"
     t.index ["stamp_id"], name: "index_items_on_stamp_id"
   end
 
-  create_table "locations", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_locations_on_user_id"
+  create_table "organizations", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "latitude"
+    t.string "longitude"
   end
 
   create_table "passport_stamps", force: :cascade do |t|
@@ -74,9 +76,10 @@ ActiveRecord::Schema.define(version: 2018_08_02_205537) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "items", "businesses"
   add_foreign_key "items", "categories"
+  add_foreign_key "items", "organizations"
   add_foreign_key "items", "stamps"
-  add_foreign_key "locations", "users"
   add_foreign_key "passport_stamps", "passports"
   add_foreign_key "passport_stamps", "stamps"
   add_foreign_key "passports", "users"
