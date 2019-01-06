@@ -9,6 +9,7 @@ describe Item, type: :model do
   describe 'relationships' do
     it { should belong_to(:category) }
     it { should belong_to(:business) }
+    it { should belong_to(:organization) }
   end
 
   describe 'methods' do

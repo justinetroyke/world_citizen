@@ -5,6 +5,7 @@ class Item < ApplicationRecord
                         :donation_amount
   belongs_to :category
   belongs_to :business
+  belongs_to :organization
 private
   # def format_org_location
   #   self.organization_location = google_address(self.organization_location)

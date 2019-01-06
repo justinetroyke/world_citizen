@@ -5,14 +5,14 @@ class ItemGeocoderService
   end
 
   def update
-    @item.business_lat = geocode[:lat]
-    @item.business_lng = geocode[:lng]
+    @item.latitude = geocode[:lat]
+    @item.longitude = geocode[:lng]
   end
 
-  def update_org
-    @item.org_lat = geocode_org[:lat]
-    @item.org_lng = geocode_org[:lng]
-  end
+  # def update_org
+  #   @item.org_lat = geocode_org[:lat]
+  #   @item.org_lng = geocode_org[:lng]
+  # end
 
   def user_geocode(user_address)
     coordinates = LatLongService.new(user_address).coordinates
@@ -24,19 +24,18 @@ class ItemGeocoderService
 private
 
   def address
-    @item.business_location
+    @item.location
   end
 
-  def org_address
-    @item.organization_location
-  end
-
-  def geocode_org
-    LatLongService.new(org_address).coordinates
-  end
+  # def org_address
+  #   @item.organization_location
+  # end
+  #
+  # def geocode_org
+  #   LatLongService.new(org_address).coordinates
+  # end
 
   def geocode
     LatLongService.new(address).coordinates
   end
-
 end
