@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :items, only: [:new, :create, :show]
   resources :campaigns, only: [:index]
+  resources :businesses, only: [:new, :create]
+  resources :organizations, only: [:new, :create]
 
   resources :users, only: [:new, :create, :show, :edit] do
     resources :passports, only: [:show]

@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'Registered User creates a new item' do
-  context 'user registers a new item' do
-    it 'should create item and direct to item show' do
-      add = "Create New Item"
+  context 'user registers a new item through new item flow' do
+    it 'should create business, org  and item and direct to item show' do
+      add = "Add New Item"
       category = Category.create!(name: 'F&B').name
       biz = "Bob's Burgers"
       biz_loc = '10446 Town Center Dr, Westminster, CO 80021'
@@ -21,25 +21,24 @@ RSpec.describe 'Registered User creates a new item' do
 
       click_on(add)
 
-      expect(current_path).to eq(new_item_path)
-      save_and_open_page
-      fill_in 'item[name]', with: name
-      fill_in 'item[donation_amount]', with: amt
-      select(category, from: 'item_category')
-      click_on 'Create New Item'
-      binding.pry
-      item = Item.last
-      expect(item.name).to eq(name)
-      expect(item.donation_amount).to eq(amt)
-
       expect(current_path).to eq(new_business_path)
-
       fill_in 'business[name]', with: biz
       fill_in 'business[location]', with: biz_loc
-      click_on 'Add New Business'
-      business = Business.last
-      expect(business.name).to eq(biz)
-      expect(business.location).to eq(biz_loc)
+      click_on 'Save New Business'
+      # business = Business.last
+      # expect(business.name).to eq(biz)
+      # expect(business.location).to eq(biz_loc)
+      #
+      # fill_in 'item[name]', with: name
+      # fill_in 'item[donation_amount]', with: amt
+      # select(category, from: 'item_category')
+      # click_on 'Create New Item'
+      # binding.pry
+      # item = Item.last
+      # expect(item.name).to eq(name)
+      # expect(item.donation_amount).to eq(amt)
+      #
+      # expect(current_path).to eq(new_business_path)
 
       # expect(updated_item.category.name).to eq(category)
       # expect(updated_item.business_id).to eq(business.id)
@@ -56,3 +55,15 @@ RSpec.describe 'Registered User creates a new item' do
     end
   end
 end
+
+# <%= f.label :organization %>
+# <%= f.text_field :organization %>
+#
+# <%= f.label :organization_location %>
+# <%= f.text_field :organization_location %>
+
+# <%= f.label :business_name %>
+# <%= f.text_field :business_name %>
+#
+# <%= f.label :business_location %>
+# <%= f.text_field :business_location %>
