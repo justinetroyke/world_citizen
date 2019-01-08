@@ -7,5 +7,12 @@
 
     <%= f.label :category %>
     <%= f.select :category, ["F&B", "Product", "BOGO"] %>
+
+    <%= f.label :business %>
+    <%= f.select :business, @bizs %>
+
+    <%= f.label :organization %>
+    <%= f.select :organization, @orgs %>
+
     <%= f.submit 'Create New Item', :class => 'item-submit' %>
   <% end %>

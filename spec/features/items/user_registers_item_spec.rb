@@ -3,6 +3,10 @@ require 'rails_helper'
 RSpec.describe 'Registered User creates a new item' do
   context 'user registers a new item through new item flow' do
     it 'should create business, org  and item and direct to item show' do
+      Business.create!(name: 'A', location: '10446 Westminster, CO 80021')
+      Organization.create!(name: 'A', location: '10446 Westminster, CO 80021')
+      Business.create!(name: 'B', location: '10446 Westminster, CO 80021')
+      Organization.create!(name: 'B', location: '10446 Westminster, CO 80021')
       add = "Add New Item"
       category = Category.create!(name: 'F&B').name
       biz = "Bob's Burgers"
@@ -11,8 +15,8 @@ RSpec.describe 'Registered User creates a new item' do
       biz_lng = '-105.0742362'
       name = 'Triple Decker'
       amt = '$10'
-      org = 'Less Burgers'
-      org_address = '4550 Montgomery Ave., Bethesda, MD 20814'
+      org = "Le' Charity"
+      org_loc = '4550 Montgomery Ave., Bethesda, MD 20814'
 
       user = User.create(name: 'Burt Macklin', email: 'stunna@fbi.com', password: '123abc')
       user.passports.create!
@@ -37,43 +41,31 @@ RSpec.describe 'Registered User creates a new item' do
       expect(current_path).to eq(new_organization_path)
 
       fill_in 'organization[name]', with: org
-      fill_in 'organization[location]', with: org_address
+      fill_in 'organization[location]', with: org_loc
       click_on 'Add Organization'
       expect(current_path).to eq(new_item_path)
 
       fill_in 'item[name]', with: name
       fill_in 'item[donation_amount]', with: amt
       select(category, from: 'item_category')
+      select(biz, from: 'item_business')
+      select(org, from: 'item_organization')
       click_on 'Create New Item'
-      # item = Item.last
-      # expect(item.name).to eq(name)
-      # expect(item.donation_amount).to eq(amt)
-      #
-      # expect(current_path).to eq(new_business_path)
+      item = Item.last
+      expect(item.name).to eq(name)
+      expect(item.donation_amount).to eq(amt)
+      expect(item.business.name).to eq(biz)
+      expect(item.business.location).to eq(biz_loc)
+      expect(item.organization.name).to eq(org)
+      expect(item.organization.location).to eq(org_loc)
 
-      # expect(updated_item.category.name).to eq(category)
-      # expect(updated_item.business_id).to eq(business.id)
-
-
-      # expect(page).to have_content(biz)
-      # expect(page).to have_content(biz_loc)
-      # expect(page).to have_content(name)
-      # expect(page).to have_content(amt)
-      # expect(page).to have_content(org)
-      # expect(page).to have_content(org_address)
-      # expect(page).to have_content(category)
+      expect(page).to have_content(biz)
+      expect(page).to have_content(biz_loc)
+      expect(page).to have_content(name)
+      expect(page).to have_content(amt)
+      expect(page).to have_content(org)
+      expect(page).to have_content(org_loc)
+      expect(page).to have_content(category)
     end
   end
 end
-
-# <%= f.label :organization %>
-# <%= f.text_field :organization %>
-#
-# <%= f.label :organization_location %>
-# <%= f.text_field :organization_location %>
-
-# <%= f.label :business_name %>
-# <%= f.text_field :business_name %>
-#
-# <%= f.label :business_location %>
-# <%= f.text_field :business_location %>

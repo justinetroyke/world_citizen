@@ -1,5 +1,4 @@
 class Item < ApplicationRecord
-  before_save :lat_lng
 
   validates_presence_of :name,
                         :donation_amount

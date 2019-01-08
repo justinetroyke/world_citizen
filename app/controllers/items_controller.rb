@@ -1,11 +1,15 @@
 class ItemsController < ApplicationController
   def new
     @item = Item.new
+    @bizs = Business.list_names
+    @orgs = Organization.list_names
   end
 
   def create
     category = Category.find_by(params["category"])
-    @item = category.items.create!(item_params)
+    org_id = Organization.get_id(item_params['organization'])
+    biz_id = Business.get_id(item_params['business'])
+    @item = category.items.create!(name:item_params["name"], donation_amount:item_params["donation_amount"], business_id:biz_id, organization_id:org_id)
     if @item.save
       flash[:success] = "#{@item.name} added!"
 
@@ -23,12 +27,11 @@ class ItemsController < ApplicationController
 
 private
   def item_params
-    params.require(:item).permit(:business_name,
-                                 :business_location,
+    params.require(:item).permit(
+                                 :business,
                                  :name,
                                  :donation_amount,
                                  :organization,
-                                 :organization_location,
                                  :category_id)
   end
 end
