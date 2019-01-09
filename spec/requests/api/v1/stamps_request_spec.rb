@@ -9,9 +9,15 @@ describe "Stamps API" do
     Stamp.create!(name: 'International')
     fb = Category.create!(name: 'F&B')
     product = Category.create!(name: 'Product')
-    fb.items.create!(business_name: "BJ's Restaurant & Brewhouse", business_location: '10446 Town Center Dr, Westminster, CO 80021', name: 'Pizookie', donation_amount: 'portion of the proceeds', organization: 'Cystic Fibrosis Foundation', organization_location: '4550 Montgomery Ave., Bethesda, MD 20814')
-    product.items.create!(business_name: 'SameDay Office Supply', business_location: '7076 S Alton Way, Centennial, CO 80112', name: 'printer cartridge', donation_amount: 'portion of recycled cartridge', organization: 'Denver Rescue Mission', organization_location: '6100 Smith Road, Denver, CO, 80216')
-    product.items.create!(business_name: 'KITTLE REAL ESTATE', business_location: '300 S Howes St, Fort Collins, CO 80521', name: 'real estate', donation_amount: '$9,000.00', organization: 'Sell a Home, Save a Child', organization_location: '300 S Howes St, Fort Collins, CO 80521')
+    biz = Business.create!(name: 'Luna Gourmet Coffee & Tea Company', location: '7295 Washington St, Denver, CO 80229')
+    biz2 = Business.create!(name: 'Hedge Row', location: '100 Steele St, Denver, CO 80206')
+    biz3 = Business.create!(name: 'ABC', location: '1510 S. Grant St., Denver, CO 80206')
+    org = Organization.create!(name: 'Surfers for Autism', location: '7491 N. Federal Hwy, Boca Raton FL 33487')
+    org2 = Organization.create!(name: 'The Park People', location: '1510 S. Grant St. Denver, CO 80210')
+    org3 = Organization.create!(name: 'edf', location: '1510 S. Grant St. Denver, CO 80210')
+    fb.items.create!(name: 'Surfers for Autism Coffee', donation_amount: '$1', business_id: biz.id, organization_id: org.id)
+    fb.items.create!(name: 'cocktail booklet', donation_amount: 'proceeds', business_id: biz2.id, organization_id: org2.id)
+    product.items.create!(name: 'printer cartridge', donation_amount: 'portion of recycled cartridge', business_id: biz3.id, organization_id: org3.id)
     params = "1801 Chestnut Pl, Denver, CO"
 
     get "/api/v1/stamps/all?address=#{params}"
