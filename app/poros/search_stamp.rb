@@ -18,7 +18,7 @@ class SearchStamp
   end
 
   def organization
-    @item['organization']
+    @item.organization.name
   end
 
   def business_name
