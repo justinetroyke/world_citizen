@@ -22,7 +22,7 @@ class SearchStamp
   end
 
   def business_name
-    @item['business_name']
+    @item.business.name
   end
 
   def category

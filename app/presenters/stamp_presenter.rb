@@ -9,7 +9,7 @@ class StampPresenter
   end
 
   def stamp(item)
-    destination = {lat: item.org_lat, lng: item.org_lng}
+    destination = {lat: item.organization.latitude, lng: item.organization.longitude}
     response = GoogleDistanceService.new(@user_location, destination).get_distance
     org_distance = response.split.first.gsub(',', '').to_i
     if org_distance < 25
@@ -26,7 +26,7 @@ class StampPresenter
   end
 
   def item_distance(item)
-    destination = {lat: item.business_lat, lng: item.business_lng}
+    destination = {lat: item.business.latitude, lng: item.business.longitude}
     GoogleDistanceService.new(@user_location, destination).get_distance
   end
 
