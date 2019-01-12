@@ -16,6 +16,6 @@ class Business < ApplicationRecord
 
 private
   def lat_lng
-    ItemGeocoderService.new(self).update
+    GeocoderService.new(self).update
   end
 end

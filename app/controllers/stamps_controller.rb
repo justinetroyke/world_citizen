@@ -18,6 +18,6 @@ private
   end
 
   def address
-    ItemGeocoderService.new.user_geocode(address_params)
+    GeocoderService.new.user_geocode(address_params)
   end
 end

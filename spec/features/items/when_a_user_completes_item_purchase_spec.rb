@@ -40,9 +40,7 @@ describe 'rewards stamp to passport when item purchased' do
       end
       # click on an item
       expect(current_path).to eq("/stamps/#{item.id}")
-      # my current path is "item/show"
-
-      save_and_open_page
+      # my current path is "item/show"rsp 
       expect(page).to have_content(item.business.name)
       expect(page).to have_content(item.business.location)
       expect(page).to have_content(item.category.name)
